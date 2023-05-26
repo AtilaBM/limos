@@ -1,0 +1,208 @@
+
+body{
+    background-color: #A60303;
+}
+form{
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    width: 40%;
+    margin: 10% auto;
+    margin-top: 10%;
+    background-color: #EDEEF3;
+    box-shadow: 5px 5px 10px #070300;
+}
+
+.form_content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+}
+.form_content_titulo h1{
+    font-weight: 500;
+    font-size: 1.4em;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form_content_titulo h1::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #F2B807 ;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+.form_input_grupo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px 0;
+}
+.form_cadastro_input_box{
+    position: relative;
+}
+.form_cadastro_input_box input{
+    width: 90%;
+    margin-top: 20;
+    font-size: 15px;
+    color: #070300;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #F2B807;
+    outline: none;
+    background: transparent;
+}
+.form_cadastro_input_box label{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 0;
+    margin-bottom: 30px ;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #070300;
+    pointer-events: none;
+    transition: .5s;
+}
+.form_cadastro_input_box input:enabled ~ label,
+.form_cadastro_input_box input:valid ~ label{
+    top: -20px;
+    left: 0;
+    font-size: 16px;
+    
+}
+/* ----------------------------------------------------- */
+.form_content_part2{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.form_content_part2 label{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #070300;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid #F2B807;
+    outline: none;
+    background: transparent;
+}
+.base_input{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    color: #070300;
+    margin: 5px 0;
+}
+.tipores select{
+    margin: 10px 0;
+    appearance: none;
+    outline: none;
+    box-shadow: 0;
+    border: 0;
+    background-color: #F2B807;
+    background-image: none;
+}
+.tipores select::-ms-expand{
+    display: none;
+}
+.tipores {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 2.5em;
+    line-height: 2;
+    background: #F2B807;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.tipores select{
+    flex:1;
+    padding: 0 .5em;
+    color: #070300;
+    cursor: pointer;
+}
+.tipores::after{
+    content: '\25BC';
+    position: absolute;
+    height: 2.5em;
+    top: 0;
+    right: 0;
+    padding: 0.3em 1em;
+    background-color: #A60303;
+    color: #EDEEF3;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+.area{
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    outline: none;
+    resize: none;
+    font-size: 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color:1px solid #F2B807;
+}
+.area:focus{
+    border-width: 3px;
+    padding: 14px;
+    border-color: #F2B807;
+}
+.area::-webkit-scrollbar{
+    width: 0;
+}
+.cardapio {
+    margin-top: 20px;
+}
+.Res_radio{
+   margin: 20px 0;
+   font-size: 15px;
+   color: #070300;
+   
+}
+.Res_radio input{
+    margin: 2px 5px;
+    letter-spacing: 1px;
+    accent-color:#A60303;
+}
+.butao{
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0px;
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #A60303;
+    color: #EDEEF3;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    font: 500;
+    transition: .2s;
+}
+.butao:hover{
+    transform: translateY(-0.25em);
+    opacity: 2;
+}

@@ -1,0 +1,9 @@
+<?php
+    include_once("cliente.php");
+    include_once("endereco.php");
+    include_once("restaurante.php");
+    include_once("comentario.php");
+    include_once("admres.php");
+    include_once("ad.php");
+    include_once("admsis.php");
+?>

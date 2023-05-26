@@ -1,0 +1,74 @@
+/*Topo*/
+/* CORES-------- */
+/* Vermelho:#A60303  */
+/* Amarelo:#F2B807 */
+/* Branco:#fff */
+.main_header {
+    align-items: center;
+    width: 100%;
+    height: 6em;
+}
+
+.main_header .main_header_content {
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.img_logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.main_header .main_header_content img {
+    /* flex-basis: 330px; */
+    padding: 5px 0;
+    width: 220px;
+
+}
+
+.main_header .main_header_content .main_header_content_menu {
+    flex-basis: calc(100% - 330px);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main_header_content_menu {
+    display: flex;
+    align-items: center;
+}
+
+.main_header_content_menu ul {
+    display: flex;
+    align-items: stretch;
+}
+
+.main_header_content_menu ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.main_header_content_menu ul li a {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 400;
+    font-size: 1.085em;
+    color: #070300;
+    transition: .12s ease-in-out;
+}
+
+.main_header_content_menu ul li a:hover {
+    padding: 0 10px;
+    color: #A60303;
+}
+
+
+/*FIM - TOPO*/

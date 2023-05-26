@@ -1,0 +1,14 @@
+ /* CORES-------- */
+/* Vermelho:#A60303  */
+/* Amarelo:#F2B807 */
+/* Branco:#EDEEF3 */
+/* background-color: rgba(236, 236, 236, 0.932); */
+*{
+    outline: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+	font-size: 1em;
+    font-family: 'Inter', sans-serif;
+}

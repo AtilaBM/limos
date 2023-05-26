@@ -1,0 +1,118 @@
+    body{
+    width: 100%;
+    height:100%;
+    background-color: #A60303;
+   
+}
+/* ------------------------------------------------------------- */
+.form_cadastro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    width: 40%;
+    margin: 10% auto;
+    background-color: #EDEEF3;
+    box-shadow: 5px 5px 10px #000;
+}
+.form_cadastro_content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    /* border: 1px solid red; */
+}
+.form_cadastro_content_titulo{
+    /* border: 1px solid black; */
+    height: 30px;
+    width: 100%;
+}
+.form_cadastro_content_titulo h1{
+    font-weight: 500;
+    font-size: 1.3em;
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid black; */
+}
+.form_cadastro_content_titulo h1::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #F2B807 ;
+    margin: 1px auto;
+    position: absolute;
+    border-radius: 5px;
+}
+.form_cadastro_input_grupo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px 0;
+    /* border: 1px solid #F2B807 ; */
+}
+.form_cadastro_input_box{
+    position: relative;
+}
+.form_cadastro_input_box input{
+    width: 90%;
+    /* border: 1px solid black; */
+    padding: 5px 0;
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #F2B807 ;
+    outline: none;
+    background: transparent;
+}
+.form_cadastro_input_box label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 5px ;
+    padding-bottom: 15px ;
+    font-size: 0.90em;
+    color: #000;
+    pointer-events: none;
+    transition: .5s;
+}
+.form_cadastro_input_box input:enabled ~ label,
+.form_cadastro_input_box input:valid~ label{
+    top: -20px;
+    left: 0;
+    color: #000000;
+    font-size: 12px;
+}
+.butao_proximo{
+    color: #EDEEF3;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #A60303 ;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    font: 400;
+    transition: .2s;
+}
+.butao_proximo:hover{
+    transform: translateY(-0.25em);
+    opacity: 2;
+}
+/* FIM FOOTER */
+

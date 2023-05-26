@@ -1,0 +1,181 @@
+/**#F2B807*/
+body {
+    background: rgba(236, 236, 236, 0.932);
+}
+
+/* container */
+.main_promotion {
+    background-color: #A60303;
+    width: 40%;
+    margin: 5% auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.main_promotion_content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.085em;
+    margin: 10px 0;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.120rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+h3{
+    font-weight: 400;
+}
+.main_promotion_content .group_butao{
+    cursor: pointer;
+    padding: 3px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2B807;
+    color: #070708;
+    letter-spacing: -0.8px; 
+    transition: all .20s;
+    border: none;
+}
+.main_promotion_content .group_butao:hover{
+    background-color: transparent;
+    letter-spacing: 1.5px;
+    color: white;
+}
+/* header container */
+.main_promotion header {
+    padding: 10px;
+    width: 100%;
+}
+
+.main_promotion h1 {
+    font-size: 1.185em;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+}
+
+.main_promotion h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.180rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+
+/* groups */
+.group_promo {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* modal */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    color: #070708;
+}
+.modal-content header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.form_cadastro_input_box{
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.form_cadastro_input_box label{
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  padding-right: 5px;
+}
+.form_cadastro_input_box input{
+    width: 65%;
+}
+.butao_proximo{
+    padding: 4px 0;
+    cursor: pointer;
+    background: transparent;
+    width: 100%;
+    border: 1px solid #A60303;
+    color: #070708;
+    letter-spacing: -0.8px;
+    margin: 8px 0;
+    transition: all 0.30s;
+}
+.butao_proximo:hover{
+    background-color: #A60303;
+    color: #fefefe;
+    letter-spacing: 1.4px;
+}
+/* modal2 */
+#inicio,#fim{
+    margin: 5px 0;
+}
+input[type="date"]{
+    background-color: #F2B807;
+    padding: 2px 5px;
+    color: #070708;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    padding: 5px;
+    cursor: pointer;
+}
+.group_date{
+    margin: 4px 0;
+    display: flex;
+    flex-direction: column;
+}

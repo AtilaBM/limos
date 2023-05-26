@@ -1,0 +1,695 @@
+/* HEADER====================================== */
+body{
+    background: rgba(236, 236, 236, 0.932);;
+}
+.main_header {
+    width: 100%;
+    height: 8em;
+}
+
+.main_header .main_header_content {
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.img_logo{
+    display:flex;
+    align-items: center;
+    height: 100%;
+}
+.main_header .main_header_content img{
+    /* flex-basis: 330px; */
+    padding: 5px 0;
+    width: 220px;
+    
+}
+
+.main_header .main_header_content .main_header_content_menu {
+    flex-basis: calc(100% - 330px);
+    display: flex;
+    justify-content: flex-end;
+}
+.main_header_content_menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu_a_inportant{
+    border-left: 1px solid #A60303;
+    padding: 0 10px;
+}
+.menu_a_inportant button{
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 160px;
+    background-color: #F2B807;
+    transition: all .25s;
+}
+.cadastro_menu{
+    color: #070300;
+    padding:10px 20px;
+    font-weight: 400;
+    font-size: 1.085em;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: .20s;
+}
+.menu_a_inportant button:hover{
+    background-color: #A60303;
+    color: #fff;
+}
+.main_header_content_menu ul {
+    display: flex;
+    align-items: stretch;
+}
+
+.main_header_content_menu ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.main_header_content_menu ul li a{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 400;
+    font-size: 1.085em;
+    color:#070300;
+    transition: .12s ease-in-out;
+    cursor: pointer;
+}
+
+.main_header_content_menu ul li a:hover{
+    padding:  0 10px;
+    color: #A60303;
+}
+/* HEADER====================================== */
+
+.info_res {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+
+.info_res_content {
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+
+.info_res_content img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.main_info {
+
+    background-color: #A60303;
+    width: 50%;
+    height: 100%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.seila {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* header=============================== */
+.info_res_content header {
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 20px;
+}
+
+.info_res_content header h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.info_res_content header h1::after {
+    content: '';
+    display: block;
+    width: 8rem;
+    height: 0.2rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 5px;
+}
+
+
+/* header=============================== */
+/* imgs======================= */
+.imgs {
+
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.imgs img {
+    padding: 10px;
+}
+
+/* imgs======================= */
+/* main info======================== */
+.imgs h2,
+.informacoes h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.95em;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.imgs h2::after,
+.informacoes h2::after {
+    content: '';
+    display: block;
+    width: 8rem;
+    height: 0.2rem;
+    background-color: #F2B807;
+    margin: 2px auto;
+    position: relative;
+    border-radius: 5px;
+}
+
+.informacoes {
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+
+}
+
+.informacoes p {
+
+    text-align: center;
+    padding: 8px 0;
+}
+
+.dados_content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+
+}
+
+.dados_content h2 {
+    font-weight: bold;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.dados_content h2::after {
+    content: '';
+    display: block;
+    width: 15rem;
+    height: 0.2rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 5px;
+}
+
+.butao_box {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.butao_box a{
+    background-color: #F2B807;
+    color: #070300;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: .20s;
+    opacity: 0.8;
+}
+
+.butao_box a:hover {
+    opacity: 1;
+}
+
+/* main info======================== */
+.coment {
+
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content_coment {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5% 0;
+}
+
+.form_content {
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.titulo_coment {
+
+    width: 100%;
+    height: 40px;
+    padding: 10px 5px;
+}
+
+.titulo_coment h1 {
+    justify-content: flex-start;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.titulo_coment h1::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 0.1rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+
+
+.area {
+
+    width: 70%;
+    height: 35px;
+    display: flex;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    color: #fff;
+    border-bottom: 1px solid #F2B807;
+}
+
+textarea::placeholder {
+    letter-spacing: 1.2px;
+    font-weight: 300;
+    color: white;
+}
+
+.area::-webkit-scrollbar {
+    width: 0px;
+}
+
+.butao_coment {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+}
+
+.form_coment input[type="submit"] {
+    text-align: center;
+    outline: none;
+    border: none;
+    background-color: #F2B807;
+    color: #070300;
+    width: 90px;
+    height: 40px;
+    transition: .20s;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form_coment input[type="submit"]:hover {
+    background-color: #f2b707c5;
+}
+
+/* comentarios/avaliacao============================================ */
+/* estrelas==================================================== */
+.estrelas {
+    width: 25%;
+
+    margin-top: 5px;
+}
+
+.estrelas input[type=radio] {
+    display: none;
+}
+
+.estrelas label i.fa {
+    cursor: pointer;
+    font-size: 1.5em;
+
+}
+
+.estrelas input[type=radio]:checked~label i.fa:before {
+    color: #fff;
+}
+
+.estrelas label i.fa:before {
+    content: '\f005';
+    color: #F2B807;
+}
+
+/* estrelas==================================================== */
+
+/* comentario_cli=============================================== */
+.comentario_cli {
+    max-width: 1400px;
+    width: 70%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3% 0;
+    padding: 15px 10px;
+    border-radius: 5px;
+}
+
+.coment_cli_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.coment_cli_content:nth-child(n + 2) {
+    border-top: 1px solid #d3d3d3;
+
+}
+
+.info_coment_cli1 {
+    padding-bottom: 7px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info_coment_cli1 h3 {
+    justify-content: flex-start;
+    font-weight: 500;
+    color: #070300;
+    font-size: 1.105em;
+    margin-bottom: 10px;
+    letter-spacing: 1.1px;
+}
+
+.info_coment_cli1 h3::after {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 0.2rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.info_coment_cli2 {
+
+    display: flex;
+    width: 100%;
+}
+
+.info_coment_cli2,
+.info_coment_cli1 p {
+    font-size: 0.95em;
+    font-weight: 200;
+}
+
+/* modal=========================================== */
+
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.titulo_modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-content h1 {
+    font-weight: 500;
+}
+
+.modal-content h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+
+.butao_proximo {
+    margin-top: 25px;
+    background: none;
+    padding: 3px 0;
+    width: 100%;
+    border: 1px solid #A60303;
+    border-radius: 5px;
+    outline: none;
+    letter-spacing: 0.8px;
+    transition: .20s;
+}
+
+.butao_proximo:hover {
+    background-color: #A60303;
+    border: 1px solid white;
+    color: white;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form_cadastro_content {
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_cadastro_input_box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_cadastro_input_box input {
+    outline: none;
+    width: 70%;
+}
+
+/* modal sair conta=========================================== */
+#titulo_saiconta{
+    width: 100%;
+    height: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#tittle_sair_conta::after{
+    content: '';
+    display: block;
+    width: 15rem;
+    height: 0.2rem;
+    background-color: #F2B807 ;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 5px;
+}
+#botoes_modal{
+    width: 100%;
+    height: 40px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#butao_modal{
+    color: white;
+    background-color: #A60303;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: -0.8px;
+    margin: 10px 0;
+    width: 200px;
+    transition: all .25s ;
+    cursor: pointer;
+    opacity: 1;
+}
+#butao_modal:hover{
+    background-color: transparent;
+    border: 1px solid #A60303;
+    color: black;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+}
+
+/* suposto dropdown */
+/* Dropdown Button */
+/* .dropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+  } */
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    transition: all .25s ;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+    
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #A60303;
+    color: white;
+    letter-spacing: 0.5px;
+}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}

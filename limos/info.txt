@@ -1,0 +1,13 @@
+alterar index painel do cliente 
+alterar conta_cli/index.css
+
+alterar index sbr-restaurante
+alterar sbr_res/index.css
+
+alterar painel/alterar-dados
+
+alterar cadastros
+alterar csscadastrores
+
+mudar cadastros
+mudar tudo
