@@ -109,6 +109,7 @@
         font-weight: 300;
     }
 </style>
+<script src="../js/sweetalert2.js"></script>
 <footer>
 
     <section class="main_footer">

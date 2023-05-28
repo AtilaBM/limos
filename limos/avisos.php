@@ -12,9 +12,8 @@
 </style>
 <?php
     # Este arquivo contem todas os avisos do sistema
-
-    $aviso = '<p class="aviso">';
-    $aviso2 = '<p class="aviso2">';
+    $aviso = '<p>';
+    $aviso2 = '<p>';
 
     # Flags de erros de cadastro
 
