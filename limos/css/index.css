@@ -308,6 +308,7 @@
     cursor: pointer;
     width: 100%;
     font-size: 14px;
+    margin-top: 0;
 }
 
 .card a {

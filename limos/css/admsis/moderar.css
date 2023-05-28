@@ -146,7 +146,14 @@ main{
 .erro{
     margin: 3px 0;
     color: #A60303;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+.sucesso{
+    margin: 5px 0;
+    color: #070300;
+    font-size: 18px;
     font-weight: 500;
     text-align: center;
 }
@@ -159,6 +166,7 @@ main{
   width: 100%;
 }
 .moderacao_tabela td,th{
+    text-transform: capitalize;
     border: 1px solid #ddd;
   padding: 8px;
 }
@@ -172,7 +180,7 @@ main{
   text-align: left;
   background-color: #F2B807 ;
   color: #070300;
-  text-transform: capitalize;
+  
   font-weight: 500;
   font-size: 16px;
 }

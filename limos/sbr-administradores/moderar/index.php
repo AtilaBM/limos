@@ -68,9 +68,21 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                         $result = mysqli_query($conexao, $query);
                         $row = mysqli_num_rows($result);
                         if ($row >= 1) {
+                            echo '<table class="moderacao_tabela cliente">';
+
+                            echo "<tr>";
+
+                            echo "<th>ID</th>";
+                            echo "<th>Nome</th>";
+                            echo "<th>Status da Conta</th> ";
+                            echo "<th>E-mail </th>";
+                            echo "<th>telefone </th>";
+                            echo "<th>Mais informações </th>";
+
+                            echo "</tr>";
                             foreach ($result as $cli) {
                                 if ($filtro != null) {
-                                    echo '<h1>Resultados escontrados para "' . $filtro . '"</h1>';
+                                    echo '<h1 class="sucesso">Resultados escontrados para "' . $filtro . '"</h1>';
                                 }
                                 $cli2 = new cliente();
                                 $cli2->id = $cli["id_cli"];
@@ -80,34 +92,24 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                 $cli2->telefone = $cli["telefone_cli"];
                                 $cli2->dataRes = $cli["data_reg_cli"];
                                 $cli2->gostos = $cli["gostos_cli"];
-                                echo '<table class="moderacao_tabela cliente">';
+
 
                                 echo "<tr>";
 
-                                echo "<th>ID</th>";
-                                echo "<th>Nome</th>";
-                                echo "<th>Status da Conta</th> ";
-                                echo "<th>E-mail </th>";
-                                echo "<th>telefone </th>";
-                                echo "<th>Mais informações </th>";
-
-                                echo "</tr>";
-                                
-                                echo "<tr>";
-                                
                                 echo "<td>$cli2->id</td>";
                                 echo "<td>$cli2->nome</td>";
-                                echo "<td>$cli2->statusConta</td>";
+                                echo "<td>";
+                                echo  $cli["status_conta_cli"] = 1 ? "Ativo" : "Desativado";
+                                echo "</td>";
                                 echo  "<td>$cli2->email</td>";
                                 echo  "<td>$cli2->telefone</td>";
                                 echo '<td><a href="cliente/index.php?idCli=' . $cli2->id . '">Ver mais</a></td>';
-                                
+
                                 echo "</tr>";
-                                
-                                echo '</table>';
                             }
+                            echo '</table>';
                         } else {
-                            echo "<h1 class='erro'>Sem resultatos para essa busca</h1>";
+                            echo "<h1 class='erro'>*Sem resultatos para essa busca*</h1>";
                         }
                         break;
                     case 2:
@@ -116,8 +118,17 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                         $row = mysqli_num_rows($result);
                         if ($row >= 1) {
                             if ($filtro != null) {
-                                echo '<h1>Resultados escontrados onde "' . $filtro . '" aparece nos comentários</h1>';
+                                echo '<h1 class="sucesso">Resultados escontrados onde a palavra "' . $filtro . '" aparece nos comentários</h1>';
                             }
+                            echo '<table class="moderacao_tabela restaurante">';
+
+                            echo "<tr>";
+                            echo "<th>Comentário </th>";
+                            echo "<th>Enviado por</th>";
+                            echo "<th>Restaurante Comentado</th>";
+
+                            echo "</tr>";
+
                             foreach ($result as $com) {
                                 $comentario = new coment($com['id_coment'], $com['id_cli'], $com['id_res'], $com['coment_coment'], $com['data_coment'], $com['nota_coment']);
                                 $idCliCom = $comentario->id_cli;
@@ -128,18 +139,28 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                 $query = "SELECT nome_res FROM `res` WHERE id_res = '$idRes'";
                                 $result = mysqli_query($conexao, $query);
                                 $nomeRes = mysqli_fetch_assoc($result);
-                                echo '<h2>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h2>';
-                                echo '<h3>' . "Referente ao restaurante" . " " . $nomeRes["nome_res"] . '</h3>';
+                                
+                                echo "<tr>";
+
+                                echo "<td>";
                                 echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
                                 echo '<p>' . $comentario->coment . '</p>';
-                                echo '<a href="cliente/index.php?idCli=' . $com['id_cli'] . '">Ver mais sobre o cliente</a>';
-                                echo '<a href="restaurante/index.php?idRes=' . $idRes . '">Ver mais sobre o restaurante</a>';
+                                echo "</td>";
+
+                                echo '<td><a href="cliente/index.php?idCli=' . $com['id_cli'] . '">' . $nomeCli["nome_cli"] . '</td></a>';
+                                echo '<td><a href="restaurante/index.php?idRes=' . $idRes . '">'.$nomeRes["nome_res"] . '</a></td>';
+                               
+                                
+
+                                echo "</tr>";
                             }
+                            echo "</table>";
                         } else {
-                            echo "<h1 class='erro'>Sem resultatos para essa busca</h1>";
+                            echo "<h1 class='erro'>*Sem resultatos para essa busca*</h1>";
                         }
                         break;
                     case 3:
+
                         $query = 'SELECT * FROM res WHERE nome_res LIKE "%' . $filtro . '%" ORDER BY nome_res;';
                         $result = mysqli_query($conexao, $query);
                         $row = mysqli_num_rows($result);
@@ -159,33 +180,61 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                             return $novo_texto; // Retorna o valor formatado
                         }
                         if ($row >= 1) {
-                            if ($filtro != null) {
-                                echo '<h1>Resultados escontrados para "' . $filtro . '"</h1>';
-                            }
-                            foreach ($result as $res) {
-                                $res2 = new restaurante($res["id_res"], $res["nome_res"], $res["tipo_res"], $res["dia_hora_func_res"], $res["encomenda_res"], $res["entrega_res"], $res["telefone_res"], $res["desc_res"], $res["cardapio_res"], $res["cnpj_res"], $res["fotos_res"], $res["nota_res"], $res["status_conta_res"], $res["whatsapp_res"], $res["instagram_res"]);
-                                echo '<h2>' . $res['nome_res'];
-                                if ($res["status_conta_res"] == 3) {
-                                    echo " - BANIDO";
-                                }
-                                echo '</h2>';
-                                echo '<img src="../../img/restaurantes/' . $res['fotos_res'] . '" alt="' . $res['nome_res'] . '" style="width: 100px">';
-                                echo '<p>' . $res2->tipo() . '</p>';
-                                echo "<p>Status da Conta: " . $res["status_conta_res"] . "</p>";
-                                echo '<h3>Descrição</h3>';
-                                echo limita_caracteres($res['desc_res'], 150);
 
-                                echo '<a href="restaurante/index.php?idRes=' . $res["id_res"] . '">Ver mais</a>';
+                            if ($filtro != null) {
+                                echo '<h1 class="sucesso">Resultados escontrados para "' . $filtro . '"</h1>';
                             }
+                            echo '<table class="moderacao_tabela restaurante">';
+
+                            echo "<tr>";
+
+
+                            echo "<th>Nome</th>";
+                            echo "<th>Status da Conta</th> ";
+                            echo "<th>Telefone </th>";
+                            echo "<th>Tipo do restaurante</th>";
+                            echo "<th>Mais informações </th>";
+
+                            echo "</tr>";
+                            foreach ($result as $res) {
+
+                                $res2 = new restaurante($res["id_res"], $res["nome_res"], $res["tipo_res"], $res["dia_hora_func_res"], $res["encomenda_res"], $res["entrega_res"], $res["telefone_res"], $res["desc_res"], $res["cardapio_res"], $res["cnpj_res"], $res["fotos_res"], $res["nota_res"], $res["status_conta_res"], $res["whatsapp_res"], $res["instagram_res"]);
+
+
+                                echo "<tr>";
+
+                                echo '<td>' . $res['nome_res'] . '</td>';
+                                echo '<td>';
+                                if ($res["status_conta_res"] == 2) {
+                                    echo " Desativado";
+                                } else if ($res["status_conta_res"] == 3) {
+                                    echo " Banido";
+                                } else {
+                                    echo "ativo";
+                                }
+                                echo '</td>';
+                                // echo '<img src="../../img/restaurantes/' . $res['fotos_res'] . '" alt="' . $res['nome_res'] . '" style="width: 100px">';
+
+                                echo '<td>' . $res["telefone_res"] . '</td>';
+                                echo '<td>';
+                                echo $res2->tipo();
+                                echo '</td>';
+                                // echo "<td>" . limita_caracteres($res['desc_res'], 150) . "</td>";
+                                echo '<td><a href="restaurante/index.php?idRes=' . $res["id_res"] . '">Ver mais</a></td>';
+
+                                echo "</tr>";
+                            }
+                            echo "</table>";
                         } else {
 
-                            echo "<h1 class='erro'>Sem resultatos para essa busca</h1>";
+                            echo "<h1 class='erro'>*Sem resultatos para essa busca*</h1>";
                         }
                         break;
                     default:
                         echo "<h1 class='erro'>Status Inválido</h1>";
                         break;
                 }
+
                 ?>
             </article>
         </section>

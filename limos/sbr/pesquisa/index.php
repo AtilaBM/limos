@@ -19,7 +19,7 @@
         <form action="index.php" method="post">
             <div class="form_content">
                 <input type="text" name="pesquisa"  id="pesquisa" placeholder="Digite o nome do restaurante..." autocomplete="off">
-                <input type="submit" value="Pesquisar">
+                <button type="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
     <?php

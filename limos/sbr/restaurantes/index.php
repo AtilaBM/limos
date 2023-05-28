@@ -129,15 +129,15 @@
                 $row = mysqli_num_rows($result);
                 if ($row >= 1) {
                     //Testa se retornou dados e abre um for para listar
-                    echo '<div class="comentario_cli">';
                     foreach ($result as $com) {
+                        echo '<div class="comentario_cli">';
+                        echo '<div class="coment_cli_content">';
                         $comentario = new coment($com['id_coment'], $com['id_cli'], $com['id_res'], $com['coment_coment'], $com['data_coment'], $com['nota_coment']);
                         # Consulta se o email e a senha digitados conhecidem com alguma entrada no banco de dados
                         $idCliCom = $comentario->id_cli;
                         $query = "SELECT nome_cli FROM `CLI` WHERE id_cli = '$idCliCom'";
                         $result = mysqli_query($conexao, $query); # Armazena o resultado da consulta ao banco
                         $nomeCli = mysqli_fetch_assoc($result); # Armazena todos os dados referentes ao resultado da consulta
-                        echo '<div class="coment_cli_content">';
 
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>'."Enviado por"." " . $nomeCli["nome_cli"] . '</h3>';
@@ -149,10 +149,8 @@
                         echo '</div>';
 
                         echo '</div>'; //coment_cli_content
+                        echo '</div>'; //comentario_cli
                     }
-                    echo '</div>'; //comentario_cli
-                } else {
-                    // echo "<p>Ninguém comentou esse restaurante ainda. Seja o Primeiro</p>";
                 }
                 ?>
             </div>
