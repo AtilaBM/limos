@@ -118,5 +118,13 @@
                 return false;
             }
         }
+        
+        public function nomeAdmSis(){
+            echo 'value="'.$this->nome_admsis.'"';
+        }
+
+        public function emailAdmSis(){
+            echo 'value="'.$this->email_admsis.'"';
+        }
     }
 ?>
