@@ -3,7 +3,8 @@
     include_once("../../../conexao.php");
     session_start();
     include_once("../../../avisos.php");
-
+    include ("../../../layout/header.php");
+    
     $idCli = mysqli_real_escape_string($conexao, trim(isset($_GET["idCli"]) ? $_GET["idCli"] : 0));
     # Montar o Objeto do restaurante
     $query = "SELECT * FROM `cli` WHERE id_cli = '$idCli'";
@@ -17,7 +18,7 @@
     $cli2->telefone = $cli["telefone_cli"];
     $cli2->dataRes = $cli["data_reg_cli"];
     $cli2->gostos = $cli["gostos_cli"];
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -33,7 +34,7 @@
                 if($cli2->statusConta == 3){
                     echo " - BANIDO";
                 }
-            ?>
+                ?>
         </h1>
         <?php
             if($cli2->statusConta != 3){
@@ -43,16 +44,16 @@
                 echo "<h1>Reativar conta do cliente</h1>";
                 echo '<a href="reativa-conta.php?idCli='.$cli2->id.'">Reativar a conta do cliente</a>';
             }
-        ?>
+            ?>
         <h1>Dados</h1>
-            <h2>Contato</h2>
-                <p>Telefone: <?php echo $cli2->telefone; ?></p>
-                <p>Id da Conta: <?php echo $cli2->id;?></p>
-                <p>E-mail: <?php echo $cli2->email;?></p>
-                <p>Data de Registro: <?php echo $cli2->dataRes;?></p>
-                <p>Status da conta: <?php echo $cli2->statusConta;?></p>
+        <h2>Contato</h2>
+        <p>Telefone: <?php echo $cli2->telefone; ?></p>
+        <p>Id da Conta: <?php echo $cli2->id;?></p>
+        <p>E-mail: <?php echo $cli2->email;?></p>
+        <p>Data de Registro: <?php echo $cli2->dataRes;?></p>
+        <p>Status da conta: <?php echo $cli2->statusConta;?></p>
         <h1>Comentários</h1>
-            <?php
+        <?php
                 $query = 'SELECT * FROM `coment` WHERE id_cli = ' . $idCli . ' ORDER BY data_coment, id_coment;';
                 $result = mysqli_query($conexao, $query);
                 $row = mysqli_num_rows($result);
@@ -71,19 +72,20 @@
                         echo '<h3>'."Referente ao restaurante"." " . $nomeRes["nome_res"]. '</h3>';
                         echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
                         echo '</div>';
-
+                        
                         echo '<div class="info_coment_cli2">';
                         echo '<p>' . $comentario->coment . '</p>';
                         echo '</div>';
                         echo '<a href="../restaurante/index.php?idRes='.$com["id_res"].'">Ver mais sobre o restaurante</a><br>';
-
+                        
                         echo '</div>'; //coment_cli_content
                     }
                     echo '</div>'; //comentario_cli
                 } else {
                     echo "<p>Esse cliente ainda não realizou nenhum comentário.</p>";
                 }
-            ?>
+                ?>
+<?php include ("../../../layout/footer.php");?>
 </body>
 
 </html>
