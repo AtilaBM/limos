@@ -48,7 +48,8 @@
             <div class="res_img ">
 
         <div class="voltar">
-            <a href="../pesquisa/index.php">voltar</a>
+        <a href="../pesquisa/index.php" class=""><i class="fas fa-arrow-left"></i>
+            </a>
 </div>
 
                 <a href="../../img/restaurantes/<?php echo $imagem ?>"><img src="../../img/restaurantes/<?php echo $imagem ?>" alt="imagem do Restaurante"></a>
