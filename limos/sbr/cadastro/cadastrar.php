@@ -98,7 +98,7 @@
         $sql = "INSERT INTO `END`(`cidade_end`, `cep_end`, `logradouro_end`, `bairro_end`, `uf_end`, `id_cli`) VALUES ('$cidade','$cep','$logradouro','$bairro','$uf','$id')";
         if($conexao->query($sql) === TRUE){
             # Criação do objeto endereco
-            $endereco = new endereco($id, null, $logradouro, $bairro, $uf, "Brazil", $cidade, null);
+            $endereco = new endereco($cep, null, $logradouro, $bairro, $uf, "Brazil", $cidade, null);
             $_SESSION['endereco'] = $endereco;
             # Fecha a conexão e redireciona o usuário para a próxima etapa do cadastro
             $conexao -> close();
