@@ -1,0 +1,45 @@
+/* CORES-------- */
+/* Vermelho:#A60303  */
+/* Amarelo:#F2B807 */
+/* Branco:#EDEEF3 */
+/* background-color: rgba(236, 236, 236, 0.932); */
+body{
+    background-color:#A60303 ;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    margin: 3% 0;
+}
+.boot{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 2%;
+}
+/* info cliente */
+.info_cliente{
+    width: 30%;
+    background-color: #fff
+}
+.info_cliente header{
+    padding-top:5px;
+    padding-bottom: 25px;
+    width: 100%;
+    height: 20px;
+}
+.info_cli_box{
+    padding: 10px 0;
+}
+.info_cli_box_groups{
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+/* info cliente */
+/* comentarios */
+.comentarios{
+    width: 70%;
+    background-color: blanchedalmond;
+}
+/* comentarios */
