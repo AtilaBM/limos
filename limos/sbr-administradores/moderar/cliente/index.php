@@ -32,6 +32,21 @@ $cli2->gostos = $cli["gostos_cli"];
 </head>
 
 <body>
+<header  class="main_header">
+        <div class="main_header_content">
+            <div class="img_logo">
+                <a href="../../index.php" class="logo">
+                    <img src="../../../img/limos_branco.png" alt="Bem vindo ao projeto Limos"
+                        title="Bem vindo ao projeto Limos"></a>
+            </div>
+    
+            <nav class="main_header_content_menu">
+                <div class="menu_a_inportant">
+                        <a href="../index.php" class="cadastro_menu">Voltar</a>
+                    </div>
+            </nav>
+        </div>
+    </header>
     <main>
         <!-- info cliente -->
         <section class="info_cliente boot">
@@ -64,18 +79,24 @@ $cli2->gostos = $cli["gostos_cli"];
                     </div>
                     <div class="info_cli_box_groups">
                         <h3>Status da Conta:</h3>
-                        <p><?php echo $cli2->statusConta; ?></p>
+                        <p><?php if($cli2->statusConta = 1){
+                            echo "Ativo";
+                        }else if($cli2->statusConta = 2){
+                            echo "Desativado";
+                        }else{
+                            echo "Banido";
+                        } ?></p>
                     </div>
                 </div>
                 
                <div class="info_cli_buttons">
                    <?php
                     if ($cli2->statusConta != 3) {
-                        echo "<h1>Banir cliente</h1>";
-                        echo '<a href="banir-conta/index.php?idCli=' . $cli2->id . '">Banir o cliente</a>';
+                       
+                        echo '<a href="banir-conta/index.php?idCli=' . $cli2->id . '" class="butao">Banir o cliente</a>';
                     } else {
-                        echo "<h1>Reativar conta do cliente</h1>";
-                        echo '<a href="reativa-conta.php?idCli=' . $cli2->id . '">Reativar a conta do cliente</a>';
+                       
+                        echo '<a href="reativa-conta.php?idCli=' . $cli2->id . '" class="butao">Reativar a conta do cliente</a>';
                     }
                     ?>
                </div>
@@ -84,9 +105,9 @@ $cli2->gostos = $cli["gostos_cli"];
         <!-- info cliente -->
         <!-- comentarios -->
         <section class="comentarios boot">
-            <header>
+            <!-- <header>
                 <h1>Comentários Feitos</h1>
-            </header>
+            </header> -->
             <div class="coment-content">
                 <?php
                 $query = 'SELECT * FROM `coment` WHERE id_cli = ' . $idCli . ' ORDER BY data_coment, id_coment;';
@@ -94,8 +115,8 @@ $cli2->gostos = $cli["gostos_cli"];
                 $row = mysqli_num_rows($result);
                 if ($row >= 1) {
                     //Testa se retornou dados e abre um for para listar
-                    echo '<div class="comentario_cli">';
                     foreach ($result as $com) {
+                        echo '<div class="comentario_cli">';
                         $comentario = new coment($com['id_coment'], $com['id_cli'], $com['id_res'], $com['coment_coment'], $com['data_coment'], $com['nota_coment']);
                         $idResCom = $comentario->id_res;
                         $query = "SELECT nome_res FROM `res` WHERE id_res = '$idResCom'";
@@ -109,10 +130,10 @@ $cli2->gostos = $cli["gostos_cli"];
                         echo '<div class="info_coment_cli2">';
                         echo '<p>' . $comentario->coment . '</p>';
                         echo '</div>';
-                        echo '<a href="../restaurante/index.php?idRes=' . $com["id_res"] . '">Ver mais sobre o restaurante</a><br>';
+                        echo '<a href="../restaurante/index.php?idRes=' . $com["id_res"] . '" class="link_res">Ver sobre o restaurante</a><br>';
                         echo '</div>'; //coment_cli_content
+                        echo '</div>'; //comentario_cli
                     }
-                    echo '</div>'; //comentario_cli
                 } else {
                     echo "<p>Esse cliente ainda não realizou nenhum comentário.</p>";
                 }
