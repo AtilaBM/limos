@@ -84,7 +84,7 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                 if ($filtro != null) {
                                     echo '<h1 class="sucesso">Resultados escontrados para "' . $filtro . '"</h1>';
                                 }
-                                $cli2 = new cliente();
+                                $cli2 = new cliente(null, null, null, null, null, null, null, null);
                                 $cli2->id = $cli["id_cli"];
                                 $cli2->nome = $cli["nome_cli"];
                                 $cli2->statusConta = $cli["status_conta_cli"];
@@ -99,7 +99,7 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                 echo "<td>$cli2->id</td>";
                                 echo "<td>$cli2->nome</td>";
                                 echo "<td>";
-                                echo  $cli["status_conta_cli"] = 1 ? "Ativo" : "Desativado";
+                                echo  $cli["status_conta_cli"] == 1 ? "Ativo" : "Desativado";
                                 echo "</td>";
                                 echo  "<td>$cli2->email</td>";
                                 echo  "<td>$cli2->telefone</td>";

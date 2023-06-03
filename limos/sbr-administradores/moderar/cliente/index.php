@@ -10,7 +10,7 @@ $idCli = mysqli_real_escape_string($conexao, trim(isset($_GET["idCli"]) ? $_GET[
 $query = "SELECT * FROM `cli` WHERE id_cli = '$idCli'";
 $result = mysqli_query($conexao, $query);
 $cli = mysqli_fetch_assoc($result);
-$cli2 = new cliente();
+$cli2 = new cliente(null, null, null, null, null, null, null, null);
 $cli2->id = $cli["id_cli"];
 $cli2->nome = $cli["nome_cli"];
 $cli2->statusConta = $cli["status_conta_cli"];
@@ -79,9 +79,9 @@ $cli2->gostos = $cli["gostos_cli"];
                     </div>
                     <div class="info_cli_box_groups">
                         <h3>Status da Conta:</h3>
-                        <p><?php if($cli2->statusConta = 1){
+                        <p><?php if($cli2->statusConta == 1){
                             echo "Ativo";
-                        }else if($cli2->statusConta = 2){
+                        }else if($cli2->statusConta == 2){
                             echo "Desativado";
                         }else{
                             echo "Banido";

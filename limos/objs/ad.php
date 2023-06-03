@@ -106,6 +106,54 @@
             $valor = number_format($valor, 2, ',', '.');
             echo 'R$ '.$valor.'';
         }
+
+        public function cadastrar(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $sql = $pdo->prepare("INSERT INTO `ad`(`data_inicio_ad`, `data_fim_ad`, `status_ad`, `status_pag_ad`, `id_res`) VALUES (?, ?, ?, ?, ?)");
+            $sql->execute(array($this->data_inicio_ad, $this->data_fim_ad, $this->status_ad, $this->status_pag_ad, $this->id_res));
+            echo "<p>Cadastro feito com sucesso</p>";
+            return true;
+        }
+
+        public function update(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("UPDATE `ad` SET `data_inicio_ad`= ?,`data_fim_ad`= ?,`status_ad`= ?,`status_pag_ad`= ?,`id_res`= ? WHERE `id_ad` = ?");
+            $sql->execute(array($this->data_inicio_ad, $this->data_fim_ad, $this->status_ad, $this->status_pag_ad, $this->id_res, $this->id_ad));
+            echo "<p>Updade feito com sucesso</p>";
+            return true;
+        }
+
+        public function delete(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("DELETE FROM `coment` WHERE `id_ad` = ?");
+            $sql->execute(array($this->id_ad));
+            echo "<p>Deletado com sucesso</p>";
+            return true;
+        }
+
+        public function login(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = $pdo->prepare("SELECT * FROM `ad` WHERE id_res = ?");
+            $sql->execute(array($this->id_res));
+            $rowsCount = $sql->rowCount();
+            $fetchAll = $sql->fetchAll();
+
+            if($rowsCount > 0){
+                echo "<p>Achei um login correspondente</p>";
+                $this->__construct($fetchAll[0]["id_ad"], $fetchAll[0]["id_res"], $fetchAll[0]["data_inicio_ad"], $fetchAll[0]["data_fim_ad"], $fetchAll[0]["status_ad"], $fetchAll[0]["status_pag_ad"]);
+                return true;
+            }else{
+                echo "<p>Erro ao pegar dados no banco na função login</p>";
+                return false;
+            }
+        }
     }
     # Fim da Classe
 

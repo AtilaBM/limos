@@ -25,6 +25,54 @@
         }
         # Fim da função
 
+        public function cadastrar($id_cli, $id_res){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $sql = $pdo->prepare("INSERT INTO `end`(`id_cli`, `id_res`, `cep_end`, `num_end`, `logradouro_end`, `bairro_end`, `uf_end`, `cidade_end`, `pais_end`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql->execute(array($id_cli, $id_res, $this->cep, $this->numero, $this->logradouro, $this->bairro, $this->uf, $this->cidade, $this->pais));
+            echo "<p>Cadastro feito com sucesso</p>";
+            return true;
+        }
+
+        public function update(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("UPDATE `end` SET `cep_end`= ?,`num_end`=' ?,`logradouro_end`= ?,`bairro_end`= ?,`uf_end`= ?,`cidade_end`= ?',`pais_end`= ? WHERE `id_end` = ?");
+            $sql->execute(array($this->cep, $this->numero, $this->logradouro, $this->bairro, $this->uf, $this->cidade, $this->pais, $this->id));
+            echo "<p>Updade feito com sucesso</p>";
+            return true;
+        }
+
+        public function login($id_cli, $id_res){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = $pdo->prepare("SELECT * FROM `end` WHERE id_res = ? AND id_cli ?");
+            $sql->execute(array($id_res, $id_cli));
+            $rowsCount = $sql->rowCount();
+            $fetchAll = $sql->fetchAll();
+
+            if($rowsCount > 0){
+                echo "<p>Achei um login correspondente</p>";
+                $this->__construct($fetchAll[0]["cep_end"], $fetchAll[0]["num_end"], $fetchAll[0]["logradouro_end"], $fetchAll[0]["bairro_end"], $fetchAll[0]["uf_end"], $fetchAll[0]["pais_end"], $fetchAll[0]["cidade_end"],$fetchAll[0]["id_end"]);
+                return true;
+            }else{
+                echo "<p>Erro ao pegar dados no banco na função login</p>";
+                return false;
+            }
+        }
+
+        public function delete(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("DELETE FROM `end` WHERE `id_end` = ?");
+            $sql->execute(array($this->id));
+            echo "<p>Deletado com sucesso</p>";
+            return true;
+        }
+
         
         # Função responsável por preencher o logradouro do cliente
         public function logradouroCli(){

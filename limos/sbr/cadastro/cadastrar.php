@@ -81,16 +81,8 @@
         $usuario_bd = mysqli_fetch_assoc($result); # Armazena todos os dados referentes ao resultado da consulta
 
         # Efetivamente cria os objetos na sessão
-        $cliente = new cliente; # Objeto importado na linha 5
-        $cliente -> dataRes = $usuario_bd["data_reg_cli"];
-        $cliente -> id = $usuario_bd["id_cli"];
-        $cliente -> telefone = $usuario_bd["telefone_cli"];
-        $cliente -> gostos = $usuario_bd["gostos_cli"];
-        $cliente -> nome = $usuario_bd["nome_cli"];
-        $cliente -> statusConta = $usuario_bd["status_conta_cli"];
-        $cliente -> emailSetter($usuario_bd["email_cli"]);
-        $cliente -> passwordSetter($usuario_bd["senha_cli"]);
-        $_SESSION['cliente'] = $cliente; # Armazena o objeto na sessão
+        $cliente = new cliente($usuario_bd["id_cli"], $usuario_bd["status_conta_cli"], $usuario_bd["nome_cli"], $usuario_bd["telefone_cli"], $usuario_bd["email_cli"], $usuario_bd["senha_cli"], $usuario_bd["data_reg_cli"], $usuario_bd["gostos_cli"]);
+        $_SESSION['cliente'] = $cliente;
         # Fim da tentativa
 
         # Início do cadastro do endereço

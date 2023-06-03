@@ -48,12 +48,7 @@
                 $query = "INSERT INTO `admsis`(`nome_admsis`, `email_admsis`, `senha_admsis`) VALUES ('$nome','$email','$senha')";
 
                 if($conexao->query($query) === TRUE){
-                    if($this->login($conexao)){
-                        return true;
-                    }else{
-                        echo "<p>Falha em se comunicar com o banco na função login dentro da função do cadastro</p>";
-                        return false;
-                    }
+                    return true;
                 }else{
                     echo "<p>Falha na query do cadastro.</p>";
                     return false;

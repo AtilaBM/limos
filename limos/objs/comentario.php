@@ -20,5 +20,35 @@
             $this->nota_coment = $nota;
         }
         # Fim da função
+
+        public function cadastrar(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $sql = $pdo->prepare("INSERT INTO `coment`(`id_cli`, `id_res`, `nota_coment`, `data_coment`, `coment_coment`) VALUES (?, ?, ?, ?, ?)");
+            $sql->execute(array($this->id_cli, $this->id_res, $this->nota_coment, $this->data_coment, $this->coment));
+            echo "<p>Comentário cadastrado com sucesso</p>";
+            return true;
+        }
+
+        public function update(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("UPDATE `coment` SET `id_cli`= ?,`id_res`= ?,`nota_coment`= ?,`data_coment`= ?,`coment_coment`= ? WHERE `id_coment` = ?");
+            $sql->execute(array($this->id_cli, $this->id_res, $this->nota_coment, $this->data_coment, $this->coment, $this->id_coment));
+            echo "<p>Updade feito com sucesso</p>";
+            return true;
+        }
+
+        public function delete(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("DELETE FROM `coment` WHERE `id_coment` = ?");
+            $sql->execute(array($this->id_coment));
+            echo "<p>Deletado com sucesso</p>";
+            return true;
+        }
     }
 ?>
