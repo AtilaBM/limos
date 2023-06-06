@@ -41,6 +41,54 @@
         }
         # Fim da função
 
+        public function cadastrar(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $sql = $pdo->prepare("INSERT INTO `res`(`status_conta_res`, `nome_res`, `tipo_res`, `dia_hora_func_res`, `encomenda_res`, `entrega_res`, `telefone_res`, `desc_res`, `cardapio_res`, `cnpj_res`, `fotos_res`, `nota_res`, `whatsapp_res`, `instagram_res`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $sql->execute(array($this->statusContaRes, $this->nome, $this->tipo, $this->diahorafunc, $this->encomenda, $this->entrega, $this->telefones, $this->descricao, $this->cardapio, $this->cnpj, $this->fotos, $this->nota, $this->whatsapp, $this->instagram));
+            echo "<p>Cadastro feito com sucesso</p>";
+            return true;
+        }
+
+        public function update(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("UPDATE `res` SET `status_conta_res`= ?,`nome_res`= ?,`tipo_res`= ?,`dia_hora_func_res`= ?,`encomenda_res`= ?,`entrega_res`= ?,`telefone_res`= ?,`desc_res`= ?,`cardapio_res`= ?,`cnpj_res`= ?,`fotos_res`= ?,`nota_res`= ?,`whatsapp_res`= ?,`instagram_res`= ? WHERE `id_res` = ?");
+            $sql->execute(array($this->statusContaRes, $this->nome, $this->tipo, $this->diahorafunc, $this->encomenda, $this->entrega, $this->telefones, $this->descricao, $this->cardapio, $this->cnpj, $this->fotos, $this->nota, $this->whatsapp, $this->instagram, $this->id));
+            echo "<p>Updade feito com sucesso</p>";
+            return true;
+        }
+
+        public function delete(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            $sql = $pdo->prepare("DELETE FROM `res` WHERE `id_res` = ?");
+            $sql->execute(array($this->id));
+            echo "<p>Deletado com sucesso</p>";
+            return true;
+        }
+
+        public function login(){
+            $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = $pdo->prepare("SELECT * FROM `res` WHERE id_res = ?");
+            $sql->execute(array($this->id));
+            $rowsCount = $sql->rowCount();
+            $fetchAll = $sql->fetchAll();
+
+            if($rowsCount > 0){
+                echo "<p>Achei um login correspondente</p>";
+                $this->__construct($fetchAll[0]["id_res"], $fetchAll[0]["nome_res"], $fetchAll[0]["tipo_res"], $fetchAll[0]["dia_hora_func_res"], $fetchAll[0]["encomenda_res"], $fetchAll[0]["entrega_res"], $fetchAll[0]["telefone_res"], $fetchAll[0]["desc_res"], $fetchAll[0]["cardapio_res"], $fetchAll[0]["cnpj_res"], $fetchAll[0]["fotos_res"], $fetchAll[0]["nota_res"], $fetchAll[0]["status_conta_res"], $fetchAll[0]["whatsapp_res"], $fetchAll[0]["instagram_res"]);
+                return true;
+            }else{
+                echo "<p>Erro ao pegar dados no banco na função login</p>";
+                return false;
+            }
+        }
+
         # Função responsável por preencher os select do tipo de restaurante
         function select($a){
             if($this->statusContaRes == 1){
