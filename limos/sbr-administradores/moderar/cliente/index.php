@@ -42,7 +42,7 @@ $cli2->gostos = $cli["gostos_cli"];
     
             <nav class="main_header_content_menu">
                 <div class="menu_a_inportant">
-                        <a href="../index.php" class="cadastro_menu">Voltar</a>
+                        <a href="../index.php" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
                     </div>
             </nav>
         </div>
@@ -93,7 +93,7 @@ $cli2->gostos = $cli["gostos_cli"];
                    <?php
                     if ($cli2->statusConta != 3) {
                        
-                        echo '<a href="banir-conta/index.php?idCli=' . $cli2->id . '" class="butao">Banir o cliente</a>';
+                        echo '<a href="banir-conta/index.php?idCli=' . $cli2->id . '" class="butao ">Banir o cliente</a>';
                     } else {
                        
                         echo '<a href="reativa-conta.php?idCli=' . $cli2->id . '" class="butao">Reativar a conta do cliente</a>';

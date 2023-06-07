@@ -154,6 +154,11 @@ body{
 }
 .res_login_cadastrar{
     font: 16px;
+    
     margin-top: 25px;
+}
+.res_login_cadastrar a{
+    color: #A60303;
+   border-bottom: 1px solid #A60303;;
 }
 /* FOOTER */
