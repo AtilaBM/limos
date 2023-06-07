@@ -53,9 +53,9 @@
                 <div class="butao_login_cadastrar">
                     <a class="butao_cadastrar_login" href="../cadastro/index.php">Criar como Cliente</a>
                 </div>
-                <div class="butao_login_cadastrar">
-                    <a class="butao_cadastrar_login" href="../../sbr-restaurantes/cadastro/index.php">Criar como Restaurante</a>
-                </div>
+                <p class="res_login_cadastrar">
+                    Quer criar uma conta pro seu restaurante ou acessar ela? <a class="butao_cadastrar_login" href="../../sbr-restaurantes/login/index.php">clique aqui</a>
+</p>
             </div>
             
         </div>

@@ -152,4 +152,8 @@ body{
 .butao_login_cadastrar a{
     color: #EDEEF3;
 }
+.res_login_cadastrar{
+    font: 16px;
+    margin-top: 25px;
+}
 /* FOOTER */
