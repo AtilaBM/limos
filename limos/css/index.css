@@ -7,7 +7,7 @@
     background: #F2B807;
     align-items: center;
     width: 100%;
-    height: 6em;
+    height: 8em;
 }
 
 .main_header .main_header_content {
@@ -245,10 +245,10 @@
 
 /* propragandas=============================== */
 .promovidos {
-
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .promovidos header{
@@ -257,7 +257,7 @@
     justify-content: center;
     width: 100%;
     height: 20px;
-    margin: 20px 0;
+    margin: 50px 0;
 }
 .promovidos header>h1{
     font-weight: 500;
@@ -275,7 +275,7 @@
     border-radius: 5px;
 }
 .content {
-    width: 20%;
+    width: 25%;
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -283,22 +283,28 @@
 
 }
 .content h2{
+    display: flex;
+align-items: center;
+    height: 20%;
     font-weight: 500;
-    font-size: 1.300em;
+    font-size: 1.200em;
     letter-spacing: 1.1px;
     padding: 5px 0;
+    text-align: center;
 }
 .card {
 
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     flex-wrap: wrap;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     
 }
 .card button {
+    height: 10%;
     border: none;
     outline: 0;
     padding: 7px;
@@ -315,7 +321,11 @@
     color: white;
     letter-spacing: 0.8px;
 }
-
+.card img{
+    margin-bottom: 0;
+    height: 70%;
+    max-width: 100%;
+}
 .card button:hover {
     opacity: 0.7;
 }

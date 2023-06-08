@@ -46,7 +46,7 @@
                 <input class="butao_login" type="submit" value="Login">
 
             </div>
-<!-- 
+
             <div class="nao_tem_conta">
                 <p>Não tem conta?</p>
             </div>
@@ -55,10 +55,10 @@
                 <div class="butao_login_cadastrar">
                     <a class="butao_cadastrar_login" href="../cadastro/index.php">Criar como Restaurante</a>
                 </div>
-                <div class="butao_login_cadastrar">
+                <!-- <div class="butao_login_cadastrar">
                     <a class="butao_cadastrar_login" href="../../sbr/cadastro/index.php">Criar como Cliente</a>
-                </div>
-            </div> -->
+                </div> -->
+            </div> 
             
         </div>
     </form>

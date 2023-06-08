@@ -93,19 +93,18 @@
     }
 
     .main_footer_rights {
-
+        padding-top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        align-self: center;
-        padding: 2px 0;
         width: 100%;
-        height: 50px;
+        height: 10px;
         text-align: center;
         background-color: #f7f7f7;
         border-top: 1px solid #808080;
         font-size: 0.9em;
         color: #333;
+      
         font-weight: 300;
     }
 </style>
