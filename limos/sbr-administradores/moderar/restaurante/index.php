@@ -51,8 +51,8 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
 
 <body>
     <main>
-        <section class="informacoes-res">
-            <article class="info-res-container">
+        <section class="informacoes-res boot">
+            <article class="info-res-container ">
                 <header>
                     <h1>
                         <?php
@@ -67,24 +67,17 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
         
                 <div class="info-res-img">
                     <h2>Fotos</h2>
-                    <img src="../../../img/restaurantes/<?php echo $imagem ?>" alt="imagem do Restaurante">
-                    <img src="../../../img/restaurantes/<?php echo $cardapio ?>" alt="imagem do cardápio">
+                    <div class="group-img">
+                        <img src="../../../img/restaurantes/<?php echo $imagem ?>" alt="imagem do Restaurante">
+                        <img src="../../../img/restaurantes/<?php echo $cardapio ?>" alt="imagem do cardápio">
+                    </div>
                 </div>
-                <?php
-                if ($res->statusContaRes != 3) {
-                    echo "<h1>Banir restaurante</h1>";
-                    echo '<a href="banir-conta/index.php?idRes=' . $restaurante_bd["id_res"] . '">Banir o restaurante</a>';
-                } else {
-                    echo "<h1>Reativar restaurante</h1>";
-                    echo '<a href="reativa-conta.php?idRes=' . $restaurante_bd["id_res"] . '">Reativar o restaurante</a>';
-                }
-                ?>
                 <div class="info-res-content">
                     <h2>Dados</h2>
                     <h3>Status</h3>
                     <p><?php echo $res->nota() ?></p>
                     <p>Status da conta: <?php echo $res->statusContaRes; ?></p>
-        
+                    
                     <h3>Funcionamento</h3>
                     <p><?php echo $res->diahorafunc; ?></p>
                     <h3>Entregas e encomendas</h3>
@@ -109,7 +102,7 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                         foreach ($result as $admres) {
                             $admres2 = new admres($admres["id_admres"], $admres["nome_admres"], $admres["email_admres"], $admres["senha_admres"]);
                             echo '<div class="">';
-                            echo "<h2>" . $admres2->nome . "</h2>";
+                            echo "<h4>" . $admres2->nome . "</h4>";
                             echo "<p>Id da Conta: " . $admres2->id . "</p>";
                             echo "<p>E-mail: " . $admres2->email . "</p>";
                             echo '</div>';
@@ -157,40 +150,55 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                     }
                     ?>
                 </div>
+                <div class="info-res-buttons">
+                    <?php
+                    if ($res->statusContaRes != 3) {
+                        
+                        echo '<a href="banir-conta/index.php?idRes=' . $restaurante_bd["id_res"] . '">Banir o restaurante</a>';
+                    } else {
+                        
+                        echo '<a href="reativa-conta.php?idRes=' . $restaurante_bd["id_res"] . '">Reativar o restaurante</a>';
+                    }
+                    ?>
+                </div>
             </article>
         </section>
-        <section class="comentarios">
-            <h1>Comentários</h1>
-            <?php
-            $query = 'SELECT * FROM `coment` WHERE id_res = ' . $idres . ' ORDER BY data_coment, id_coment;';
-            $result = mysqli_query($conexao, $query);
-            $row = mysqli_num_rows($result);
-            if ($row >= 1) {
-                //Testa se retornou dados e abre um for para listar
-                echo '<div class="comentario_cli">';
-                foreach ($result as $com) {
-                    $comentario = new coment($com['id_coment'], $com['id_cli'], $com['id_res'], $com['coment_coment'], $com['data_coment'], $com['nota_coment']);
-                    # Consulta se o email e a senha digitados conhecidem com alguma entrada no banco de dados
-                    $idCliCom = $comentario->id_cli;
-                    $query = "SELECT nome_cli FROM `CLI` WHERE id_cli = '$idCliCom'";
-                    $result = mysqli_query($conexao, $query); # Armazena o resultado da consulta ao banco
-                    $nomeCli = mysqli_fetch_assoc($result); # Armazena todos os dados referentes ao resultado da consulta
-                    echo '<div class="coment_cli_content">';
-                    echo '<div class="info_coment_cli1">';
-                    echo '<h3>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h3>';
-                    echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
-                    echo '</div>';
-                    echo '<div class="info_coment_cli2">';
-                    echo '<p>' . $comentario->coment . '</p>';
-                    echo '</div>';
-                    echo '<a href="../cliente/index.php?idCli=' . $idCliCom . '">Ver mais sobre o cliente</a><br>';
-                    echo '</div>'; //coment_cli_content
+        
+        
+        
+        <section class="comentarios boot">
+            <article class="coment-content">
+                <?php
+                $query = 'SELECT * FROM `coment` WHERE id_res = ' . $idres . ' ORDER BY data_coment, id_coment;';
+                $result = mysqli_query($conexao, $query);
+                $row = mysqli_num_rows($result);
+                if ($row >= 1) {
+                    //Testa se retornou dados e abre um for para listar
+                    echo '<div class="comentario_cli">';
+                    foreach ($result as $com) {
+                        $comentario = new coment($com['id_coment'], $com['id_cli'], $com['id_res'], $com['coment_coment'], $com['data_coment'], $com['nota_coment']);
+                        # Consulta se o email e a senha digitados conhecidem com alguma entrada no banco de dados
+                        $idCliCom = $comentario->id_cli;
+                        $query = "SELECT nome_cli FROM `CLI` WHERE id_cli = '$idCliCom'";
+                        $result = mysqli_query($conexao, $query); # Armazena o resultado da consulta ao banco
+                        $nomeCli = mysqli_fetch_assoc($result); # Armazena todos os dados referentes ao resultado da consulta
+                        echo '<div class="coment_cli_content">';
+                        echo '<div class="info_coment_cli1">';
+                        echo '<h3>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h3>';
+                        echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
+                        echo '</div>';
+                        echo '<div class="info_coment_cli2">';
+                        echo '<p>' . $comentario->coment . '</p>';
+                        echo '</div>';
+                        echo '<a href="../cliente/index.php?idCli=' . $idCliCom . '"class="link_res">Ver mais sobre o cliente</a><br>';
+                        echo '</div>'; //coment_cli_content
+                    }
+                    echo '</div>'; //comentario_cli
+                } else {
+                    echo "<p>Ninguém comentou esse restaurante ainda.</p>";
                 }
-                echo '</div>'; //comentario_cli
-            } else {
-                echo "<p>Ninguém comentou esse restaurante ainda.</p>";
-            }
-            ?>
+                ?>
+            </article>
         </section>
     </main>
     <?php include("../../../layout/footer.php"); ?>
