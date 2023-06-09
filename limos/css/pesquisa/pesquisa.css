@@ -81,21 +81,22 @@ form{
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
 }
 .info_res{
     width: 100%;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    padding: 25px 15px;
 }
 .info_res:nth-child(n + 2){
     border-top:1px solid #d3d3d3;
 }
 .infos_grup{
+    background-color: #f0f0f0c7;
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding: 5px 0;
 }
 
 .img_res{
@@ -103,10 +104,12 @@ form{
     align-items: center;
     justify-content: center;
     width: 50%;
+    height: 100%;
+    padding: 10px;
 }
 .img_res img{
-   max-width: 400px;
-   max-height: 300px;
+   width: 400px;
+height: 300px;
     border-radius: 5px;
 }
 .miniinfo_res{
