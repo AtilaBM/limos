@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexao = mysqli_connect('localhost', 'root', '1677'); # Dados da Conexão
+    $conexao = mysqli_connect('localhost', 'root', ''); # Dados da Conexão
 
     if(isset($_SESSION['banco-upado'])){
         echo "<p>O banco foi upado com sucesso<p>";
@@ -12,7 +12,7 @@
             $sql = "CREATE SCHEMA IF NOT EXISTS `sbr` DEFAULT CHARACTER SET utf8 ;";
             if($conexao->query($sql) === TRUE){
                 echo "<p>Banco criado com sucesso</p>";
-                $conexao = mysqli_connect('localhost', 'root', '1677', 'sbr');
+                $conexao = mysqli_connect('localhost', 'root', '', 'sbr');
             }else{
                 echo "<p>Algo deu errado ao criar o banco</p>";
             }
@@ -212,7 +212,7 @@
             (1, 'Seu Logo', 5, 'Todos os dias, das 7PM às 4AM.', 1, 1, '06139637678', 'Uma pizzaria top. Temos a maior pizza do Centro-Oeste.', 'cardapio-6-2023.05.11-14.14.16.jpg', NULL, '6-2023.05.11-14.14.16.jpg', 0, '06139637678', 'seulogopizzaria'),
             (1, 'Ali\'s Tapas', 11, 'Todos os dias, das 11 ás 15.', 1, 2, '06134514750', 'Conheça o quebab otomano.', 'cardapio-7-2023.05.11-14.21.08.jpg', NULL, '7-2023.05.11-14.21.08.jpg', 0, '+5506134514750', 'alistapas'),
             (1, 'Kim Will Sung', 10, 'De segunda a quinta, das 12 às 15.', 2, 2, '06138790900', 'Um restaurante norte coreano gerenciado por refugiados da ditadura.', 'cardapio-8-2023.05.11-14.28.32.jpg', NULL, '8-2023.05.11-14.28.32.jpg', 0, '06138790900', 'koreadonorte'),
-            (1, 'Bom de Boca', 7, 'Todos os dias em horário comercial.', 2, 1, '06134598153', 'Um restaure normal.', 'cardapio-9-2023.05.11-14.32.31.jpg', NULL, '9-2023.05.11-14.32.31.jpg', 0, '06134598153', 'bomdecoca'),
+            (1, 'Bom de Boca', 7, 'Todos os dias em horário comercial.', 2, 1, '06134598153', 'Um restaure normal.', 'cardapio-9-2023.05.11-14.32.31.jpg', NULL, '9-2023.05.11-14.32.31.jpg', 0, '06134598153', 'bomdeboca'),
             (1, 'Le Amoux', 8, 'Somente funciona com reservas feitas através do nosso telefone.', 2, 2, '061998380012', 'Um restaurante dedicado à elite do funcionalismo público.', 'cardapio-10-2023.05.11-14.36.49.jpg', NULL, '10-2023.05.11-14.36.49.jpg', 0, '061998380012', 'leamoux'),
             (1, 'Italianos', 9, '24/7', 1, 1, '06134435050', 'Só aceitamos dinheiro vivo. Totalmente não funciona como esquema de lavagem de dinheiro.', 'cardapio-11-2023.05.11-14.41.15.jpg', NULL, '11-2023.05.11-14.41.15.jpg', 5, '06134435050', 'italianos');";
             if($conexao->query($sql) === TRUE){

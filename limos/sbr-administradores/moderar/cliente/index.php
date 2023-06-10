@@ -42,7 +42,7 @@ $cli2->gostos = $cli["gostos_cli"];
     
             <nav class="main_header_content_menu">
                 <div class="menu_a_inportant">
-                        <a href="../index.php" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
+                        <a href="../index.php?status=1&filtro=" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
                     </div>
             </nav>
         </div>
