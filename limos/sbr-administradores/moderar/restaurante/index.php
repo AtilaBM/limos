@@ -1,9 +1,9 @@
 <?php
+include("../../../layout/header.php");
 include_once("../../../objs/objetos.php");
 include_once("../../../conexao.php");
 session_start();
 include_once("../../../avisos.php");
-include("../../../layout/header.php");
 
 $idres = mysqli_real_escape_string($conexao, trim(isset($_GET["idRes"]) ? $_GET["idRes"] : 0));
 # Montar o Objeto do restaurante
@@ -75,7 +75,10 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                 <div class="info-res-content">
                     <h2>Dados</h2>
                     <h3>Status</h3>
-                    <p><?php echo $res->nota() ?></p>
+                    <p><?php for ($i = 1; $i <= 5; $i++) {
+                            $starImage = ($i <= $restaurante_bd["nota_res"]) ? '../../../img/icons/estrela.png' : '../../../img/icons/estrela_vazia.png';
+                            echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
+                        }?>
                     <p>Status da conta: <?php echo $res->statusContaRes; ?></p>
                     
                     <h3>Funcionamento</h3>
@@ -123,9 +126,9 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                         if ($ad->status_ad == 1) {
                             if ($ad->atualizaAdBanco($conexao)) {
                                 if ($ad->status_pag_ad == 2) {
-                                    echo "<h2>Pagamento Pendente</h2>";
+                                    echo "<h3>*Pagamento Pendente*</h3>";
                                 } else {
-                                    echo "<h2>Promoção Ativa<h2>";
+                                    echo "<h3>*Promoção Ativa*</h3>";
                                 }
                                 echo "<h3>Data prevista de início da promoção</h3>";
                                 echo "<p>" . $ad->formata_data_ad(1) . "</p>";
@@ -139,7 +142,7 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                                 echo "<p>" . $ad->formata_data_ad(2) . "</p>";
                             }
                         } else {
-                            echo "<h2>Promoção Finalizada<h2>";
+                            echo "<h2>Promoção Finalizada</h2>";
                             echo "<h3>Data de início da promoção</h3>";
                             echo "<p>" . $ad->formata_data_ad(1) . "</p>";
                             echo "<h3>Data de finalização da promoção</h3>";
@@ -185,7 +188,15 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                         echo '<div class="coment_cli_content">';
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h3>';
-                        echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
+                        echo '<div class="estrelas">';
+                        echo $comentario->data_coment; 
+                        echo '<p>';
+                        for ($i = 1; $i <= 5; $i++) {
+                            $starImage = ($i <= $com['nota_coment']) ? '../../../img/icons/estrela.png' : '../../../img/icons/estrela_vazia.png';
+                            echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
+                        }
+                        echo '</p>';   
+                        echo '</div>';
                         echo '</div>';
                         echo '<div class="info_coment_cli2">';
                         echo '<p>' . $comentario->coment . '</p>';

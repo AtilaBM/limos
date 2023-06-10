@@ -143,6 +143,15 @@ main{
 /* info cliente */
 
 /* comentarios */
+.estrelas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .estrelas p{
+    padding-top: 5px;
+  }
 .comentarios{
     float: right;
     display: flex;

@@ -41,7 +41,7 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                         <a href="index.php?status=3&filtro=" class="btn">Restaurantes</a>
                     </li>
                     <div class="menu_a_inportant">
-                        <a href="../index.php" > <i class="fas fa-home"></i> </a>
+                        <a href="../index.php" > <i class="fas fa-arrow-left"></i> </a>
 
                     </div>
         </div>

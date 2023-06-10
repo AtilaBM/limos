@@ -75,7 +75,7 @@ include("../layout/header.php");
                     <div class="dropdown-content" id="myDropdown">
                         <h2>alterar Informações</h1>
                             <div class="butao_box">
-                                <a href="cadastro/modificarestaurante.php" class="botoes_admres">Alterar dados do restaurante</a>
+                                <a href="cadastro/altera_dados.php" class="botoes_admres">Alterar dados do restaurante</a>
                                 <a href="alterar-dados-pessoais/index.php" class="botoes_admres">Alterar dados pessoais do administrador</a>
                                 <a href="adicionar-admnistrador/index.php" class="botoes_admres">Adicionar um novo administrador ao sistema</a>
                             </div>
@@ -123,7 +123,10 @@ include("../layout/header.php");
 
                             <h2>Dados do Restaurante</h2>
                             <p>Nome: <?php echo $_SESSION['restaurante']->nome ?></p>
-                            <p>Nota: <?php echo  $_SESSION["restaurante"]->nota; ?> Estrelas</p>
+                            <p><?php for ($i = 1; $i <= 5; $i++) {
+                            $starImage = ($i <= $_SESSION["restaurante"]->nota) ? '../img/icons/estrela.png' : '../img/icons/estrela_vazia.png';
+                            echo '<img src="' . $starImage . '" style="width: 25px; height: 25px;">';
+                        }  ; ?> </p>
 
 
                             <h2>Endereço do Restaurante</h2>
@@ -167,7 +170,15 @@ include("../layout/header.php");
 
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h3>';
-                        echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
+                        echo '<div>';
+                        echo'<p style="margin-left:25px;">'. $comentario->data_coment.'</p>';
+                        echo '<br>';
+                        for ($i = 1; $i <= 5; $i++) {
+                            $starImage = ($i <= $com['nota_coment']) ? '../img/icons/estrela.png' : '../img/icons/estrela_vazia.png';
+                            echo '<img src="' . $starImage . '" style="width: 25px; height: 25px;">';
+                            }
+                           
+                           echo  '</div>';
                         echo '</div>';
 
                         echo '<div class="info_coment_cli2">';

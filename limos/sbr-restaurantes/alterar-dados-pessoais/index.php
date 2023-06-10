@@ -2,7 +2,7 @@
     include("../../conexao.php");
     include_once("../../objs/objetos.php");
     include ("../../layout/header.php");
-    include ("../layout_res/menu_login.php");
+    include ("../../layout/menu_login_res.php");
     session_start();
 ?>
 <!DOCTYPE html>

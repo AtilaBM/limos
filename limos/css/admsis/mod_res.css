@@ -114,16 +114,37 @@ main{
 .info-res-container h2,
 .info-res-content h2,
 .info-res-promocoes h2{
-  font-weight: 300px;
+  text-transform: uppercase;
+  font-weight: 400;
   font-size: 16px ;
-  margin: 8px 0;
+  margin: 14px 0;
+}
+.info-res-container h2::after,
+.info-res-content h2::after,
+.info-res-promocoes h2::after{
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #A60303 ;
+  margin: 1px auto;
+  position: absolute;
+  border-radius: 5px;
 }
 .info-res-container h3,
 .info-res-content h3,
 .info-res-promocoes h3{
-  font-weight: 200px;
+  text-transform: capitalize;
+  font-weight: bold;
   font-size: 14px ;
-  margin: 4px 0;
+  margin: 7px 0;
+}
+.info-res-container p,li{
+  margin: 5px 0;
+}
+.info-res-container i{
+  margin: 5px 0;
+  margin-right: 3px;
 }
 
 /* img */
@@ -162,6 +183,15 @@ main{
 /* informacoes-res */
 
 /* comentarios */
+.estrelas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.estrelas p{
+  padding-top: 5px;
+}
 .comentarios{
   width: 50%;
   float: right;
