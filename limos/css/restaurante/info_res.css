@@ -332,4 +332,7 @@ textarea::placeholder{
     font-size: 0.95em;
     font-weight: 200;
 }
+.nota-res{
+    margin-top: 10px;
+}
 /* comentario_cli=============================================== */

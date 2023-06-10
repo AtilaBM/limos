@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conexao = mysqli_connect('localhost', 'root', ''); # Dados da Conexão
+    $conexao = mysqli_connect('localhost', 'root', '1677'); # Dados da Conexão
 
     if(isset($_SESSION['banco-upado'])){
         echo "<p>O banco foi upado com sucesso<p>";
@@ -12,7 +12,7 @@
             $sql = "CREATE SCHEMA IF NOT EXISTS `sbr` DEFAULT CHARACTER SET utf8 ;";
             if($conexao->query($sql) === TRUE){
                 echo "<p>Banco criado com sucesso</p>";
-                $conexao = mysqli_connect('localhost', 'root', '', 'sbr');
+                $conexao = mysqli_connect('localhost', 'root', '1677', 'sbr');
             }else{
                 echo "<p>Algo deu errado ao criar o banco</p>";
             }

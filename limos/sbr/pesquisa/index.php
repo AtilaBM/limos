@@ -78,7 +78,12 @@ function limita_caracteres($texto, $limite, $quebra = true){
                                 echo '<p>';
                                 echo limita_caracteres($res['desc_res'],150);
                                 echo '</p>';
-                                
+                                echo '<p class="nota-res">';
+                                 for ($i = 1; $i <= 5; $i++) {
+                                    $starImage = ($i <= $res["nota_res"]) ? '../../img/icons/estrela.png' : '../../img/icons/estrela_vazia.png';
+                                    echo '<img src="' . $starImage . '" style="width: 35px; height: 35px;">';
+                                }   
+                                echo '</p>';
                             echo '</div>';
 
                             echo '<div class="ver_mais_button">';

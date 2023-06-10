@@ -71,7 +71,7 @@ include("../layout/header.php");
             <!-- dropdown===================== -->
             <div class="menu_a_inportant">
                 <div class="dados_content dropdown">
-                    <button onclick="myFunction()" class="dropbtn">Opções</button>
+                    <button onclick="myFunction()" class="dropbtn"><i class="fas fa-bars"></i></button>
                     <div class="dropdown-content" id="myDropdown">
                         <h2>alterar Informações</h1>
                             <div class="butao_box">

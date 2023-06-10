@@ -79,9 +79,7 @@ main{
 /* header */
 /* info cliente */
 .info_cliente{
-    margin: -2% 2% ;
     float: left;
-    position: fixed;
     width: 30%;
     background-color: #fff
 }
@@ -149,10 +147,12 @@ main{
     float: right;
     display: flex;
     width: 60%;
+    height: 350px;
+    overflow-y: scroll;
 }
 .comentario_cli{
     max-width: 1400px;
-    width: 70%;
+    width: 100%;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -186,16 +186,6 @@ main{
       margin-bottom: 10px;
       letter-spacing: 1.1px;
   }
-  .info_coment_cli1  h3::after{ content: '';
-       display: block;
-      width: 3rem;
-      height: 0.2rem;
-      background-color: #F2B807 ;
-      margin: 0 auto;
-      position: absolute;
-      border-radius: 5px;
-  }
-  
 .info_coment_cli2{
    
     display: flex;

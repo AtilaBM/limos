@@ -143,8 +143,13 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                 echo "<tr>";
 
                                 echo "<td>";
-                                echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
-                                echo '<p>' . $comentario->coment . '</p>';
+                                echo '<p>';
+                                for ($i = 1; $i <= 5; $i++) {
+                                    $starImage = ($i <= $com['nota_coment']) ? '../../img/icons/estrela.png' : '../../img/icons/estrela_vazia.png';
+                                    echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
+                                } 
+                                echo '<span style="margin-left:5px;">'.$comentario->data_coment . '</span></p>';
+                                echo '<p style="margin-top:5px;">' . $comentario->coment . '</p>';
                                 echo "</td>";
 
                                 echo '<td><a href="cliente/index.php?idCli=' . $com['id_cli'] . '">' . $nomeCli["nome_cli"] . '</td></a>';

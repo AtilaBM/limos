@@ -64,7 +64,10 @@
                     <header class="titulo_res">
                         <h1><?php echo $res->nome; ?></h1>
                         <p><?php echo $res->tipo() ?></p>
-                        <p><?php echo $res->nota() ?></p>
+                        <p class="nota-res"><?php  for ($i = 1; $i <= 5; $i++) {
+                            $starImage = ($i <= $restaurante_bd["nota_res"]) ? '../../img/icons/estrela.png' : '../../img/icons/estrela_vazia.png';
+                            echo '<img src="' . $starImage . '" style="width: 30px; height: 30px;">';
+                        }   ?></p>
                     </header>
 
 
@@ -103,22 +106,33 @@
             </header>
 
             <div class="content_coment">
-                <form action="comentar.php" method="post" class="form_coment ">
-                <div class="saco"><textarea id="coment" name="coment" rows="5" cols="33" placeholder="Comentar..." class="area"></textarea></div>
+                <form action="comentar.php" method="POST" class="form_coment ">
+                <div class="saco">
+                    <textarea id="coment" name="coment" rows="5" cols="33" placeholder="Comentar..." class="area"></textarea>
+            </div>
                     <div class="estrelas">
-                        <input type="text" name="idRes" value="<?php echo $idres;?>" style="display: none;">
-                        <label for="cm_star-1"><i class="fa"></i></label>
-                        <input type="radio" id="cm_star-1" name="nota" value="1">
-                        <label for="cm_star-2"><i class="fa"></i></label>
-                        <input type="radio" id="cm_star-2" name="nota" value="2">
-                        <label for="cm_star-3"><i class="fa"></i></label>
-                        <input type="radio" id="cm_star-3" name="nota" value="3">
-                        <label for="cm_star-4"><i class="fa"></i></label>
-                        <input type="radio" id="cm_star-4" name="nota" value="4">
-                        <label for="cm_star-5"><i class="fa"></i></label>
-                        <input type="radio" id="cm_star-5" name="nota" value="5">
+                        
+                        <input type="radio" id="pontuacao-1" name="nota" value="1"required>
+                        <label for="pontuacao-1" onclick="marcarEstrelas(1)"><img src="../../img/icons/estrela_vazia.png"style="width:25px;height:25px;" alt=""></label>
+
+                        <input type="radio" id="pontuacao-2" name="nota" value="2"required>
+                        <label for="pontuacao-2"onclick="marcarEstrelas(2)"><img src="../../img/icons/estrela_vazia.png"style="width:25px;height:25px;" alt=""></label>
+
+                        <input type="radio" id="pontuacao-3" name="nota" value="3"required>
+                        <label for="pontuacao-3"onclick="marcarEstrelas(3)"><img src="../../img/icons/estrela_vazia.png"style="width:25px;height:25px;" alt=""></label>
+
+
+                        <input type="radio" id="pontuacao-4" name="nota" value="4"required>
+                        <label for="pontuacao-4"onclick="marcarEstrelas(4)"><img src="../../img/icons/estrela_vazia.png"style="width:25px;height:25px;" alt=""></label>
+
+                        
+                        <input type="radio" id="pontuacao-5" name="nota" value="5"required>
+                        <label for="pontuacao-5"onclick="marcarEstrelas(5)"><img src="../../img/icons/estrela_vazia.png"style="width:25px;height:25px;" alt=""></label>
+
+                        <input type="hidden" name="idRes" value="<?php echo $idres;?>" >
                     </div>
                 
+                        </script>
                 
                     <div class="butao_coment">
                         <input type="submit" value="Avaliar"></input>
@@ -142,7 +156,13 @@
 
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>'."Enviado por"." " . $nomeCli["nome_cli"] . '</h3>';
-                        echo '<p>' . $comentario->nota_coment . " Estrelas - " . $comentario->data_coment . '</p>';
+                        
+                        echo '<p>'; 
+                         for ($i = 1; $i <= 5; $i++) {
+                            $starImage = ($i <= $com['nota_coment']) ? '../../img/icons/estrela.png' : '../../img/icons/estrela_vazia.png';
+                            echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
+                        }  
+                        echo '</p>';
                         echo '</div>';
 
                         echo '<div class="info_coment_cli2">';
@@ -161,6 +181,20 @@
 
     </main>
     <?php include("../../layout/footer.php"); ?>
+    
+    <script>
+                function marcarEstrelas(pontuacao) {
+                    var estrelas = document.querySelectorAll('.estrelas label img');
+
+                    for (var i = 0; i < estrelas.length; i++) {
+                        if (i < pontuacao) {
+                            estrelas[i].src = '../../img/icons/estrela.png';
+                        } else {
+                            estrelas[i].src = '../../img/icons/estrela_vazia.png';
+                        }
+                    }
+                }
+            </script>
 </body>
 
 </html>
