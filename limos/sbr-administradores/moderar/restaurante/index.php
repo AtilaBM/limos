@@ -42,7 +42,7 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
 
         <nav class="main_header_content_menu">
             <div class="menu_a_inportant">
-                <a href="../index.php" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
+                <a href="../index.php?status=3&filtro=" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
             </div>
         </nav>
     </div>

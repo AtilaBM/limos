@@ -25,7 +25,7 @@
                     $sql = "UPDATE `cli` SET `status_conta_cli` = 2  WHERE id_cli = '$idcli'";
                     if($conexao->query($sql) === TRUE){
                         $_SESSION["cliente"]-> statusConta = 2;
-                        header("Location: index.php");
+                        header("Location: ../login/logout.php");
                         exit;
                     }else{
                         $_SESSION["ErroBancoDel"] =  true;

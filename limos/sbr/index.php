@@ -79,7 +79,7 @@
                                 $query = "SELECT * FROM res WHERE id_res = '$id_res';";
                                 $res = mysqli_fetch_assoc(mysqli_query($conexao, $query));
                                 $row = mysqli_num_rows($result);
-                                if($row >= 1){
+                                if($row >= 1 and $res["status_conta_res"] == 1){
                                     $res2 = new restaurante($res["id_res"],$res["nome_res"],$res["tipo_res"],$res["dia_hora_func_res"],$res["encomenda_res"],$res["entrega_res"],$res["telefone_res"],$res["desc_res"],$res["cardapio_res"],$res["cnpj_res"], $res["fotos_res"], $res["nota_res"], $res["status_conta_res"], $res["whatsapp_res"], $res["instagram_res"]);
                                    echo '<div class="content">';
                                    echo '<div class="card">';
