@@ -96,29 +96,47 @@
                 ?>
             </section>
             <!--FIM Restaurantes promovidos -->
-
-            <!--INICIO SESSÃO OPTIN-->
-            <article class="opt_in">
-            <div class="opt_in_content">
-                <header>
-                    <h1>Quer receber todas as novidades em seu e-mail?</h1>
-                    <p>Informe o seu nome e e-mail no campo ao lado e clique em Ok!</p>
-                </header>
-                <form>
-                    <input type="text" placeholder="Seu nome">
-                    <input type="email" placeholder="Seu email">
-                    <button type="submit">Ok</button>
-                </form>
-            </div>
-            </article>
-
-            <!--FIM SESSÃO OPTIN-->
-
         </main>
         <!--FIM DOBRA PALCO PRINCIPAL-->
 
         <!--INCIIO DOBRA RODAPE-->
-        <?php require_once ("../layout/footer.php");?>
+         <!-- FOOTER============================================= -->
+    <section class="main_footer">
+        <header>
+            <h1>Quer saber mais?</h1>
+        </header>
+        <article class="main_footer_our_pages">
+            <header>
+                <h2>Nossas Páginas</h2>
+            </header>
+            <ul>
+                <li><a href="index.php">Início</a></li>
+                <li><a href="../sbr/pesquisa/index.php">Restaurantes</a></li>
+            </ul>
+        </article>
+
+        <article class="main_footer_links">
+            <header>
+                <h2>Links Úteis</h2>
+            </header>
+            <ul>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Aviso Legal</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+            </ul>
+        </article>
+
+        <article class="main_footer_about">
+            <header>
+                <h2>Sobre o Projeto</h2>
+            </header>
+            <p>Procure os melhores restaurantes com base em sua localização e gostos pessoais e divulgue sua experiência por meio dos comentários e da avaliação do resturante.</p>
+        </article>
+    </section>
+    <footer class="main_footer_rights">
+        <p>LIMOS - &copy;Todos os direitos reservados.</p>
+    </footer>
+    <!-- FIM FOOTER=================================== -->
         <!--FIM DOBRA RODAPE-->
     </body>
 </html>

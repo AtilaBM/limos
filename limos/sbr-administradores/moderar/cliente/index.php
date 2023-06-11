@@ -32,30 +32,29 @@ $cli2->gostos = $cli["gostos_cli"];
 </head>
 
 <body>
-<header  class="main_header">
+    <header class="main_header">
         <div class="main_header_content">
             <div class="img_logo">
                 <a href="../../index.php" class="logo">
-                    <img src="../../../img/limos_branco.png" alt="Bem vindo ao projeto Limos"
-                        title="Bem vindo ao projeto Limos"></a>
+                    <img src="../../../img/limos_branco.png" alt="Bem vindo ao projeto Limos" title="Bem vindo ao projeto Limos"></a>
             </div>
-    
+
             <nav class="main_header_content_menu">
                 <div class="menu_a_inportant">
-                        <a href="../index.php?status=1&filtro=" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
-                    </div>
+                    <a href="../index.php?status=1&filtro=" class="cadastro_menu "><i class="fas fa-arrow-left"></i></a>
+                </div>
             </nav>
         </div>
     </header>
     <main>
         <!-- info cliente -->
         <section class="info_cliente boot">
-           
+
             <article class="info_cli_container">
                 <header>
                     <h1>Dados</h1>
                 </header>
-                
+
                 <div class="info_cli_box">
                     <div class="info_cli_box_groups">
                         <h3>Nome:</h3>
@@ -79,27 +78,48 @@ $cli2->gostos = $cli["gostos_cli"];
                     </div>
                     <div class="info_cli_box_groups">
                         <h3>Status da Conta:</h3>
-                        <p><?php if($cli2->statusConta == 1){
-                            echo "Ativo";
-                        }else if($cli2->statusConta == 2){
-                            echo "Desativado";
-                        }else{
-                            echo "Banido";
-                        } ?></p>
+                        <p><?php if ($cli2->statusConta == 1) {
+                                echo "Ativo";
+                            } else if ($cli2->statusConta == 2) {
+                                echo "Desativado";
+                            } else {
+                                echo "Banido";
+                            } ?></p>
                     </div>
                 </div>
-                
-               <div class="info_cli_buttons">
-                   <?php
+
+                <div class="info_cli_buttons">
+                    <?php
                     if ($cli2->statusConta != 3) {
-                       
-                        echo '<a href="banir-conta/index.php?idCli=' . $cli2->id . '" class="butao ">Banir o cliente</a>';
+
+                        echo '<a href="#' . $cli2->id . '" class="butao " id="myBtn">Banir o cliente</a>';
                     } else {
-                       
+
                         echo '<a href="reativa-conta.php?idCli=' . $cli2->id . '" class="butao">Reativar a conta do cliente</a>';
                     }
                     ?>
-               </div>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                        <div class="titulo_modal">
+                                <h1>Banir Conta</h1>
+                                <span class="close">&times;</span>
+                            </div>
+                            <form class="form_cadastro" action="./banir-conta/banir.php" method="post" autocomplete="off">
+                                <div class="form_cadastro_content">
+                                    <div class="form_cadastro_input_grupo">
+                                        <div class="form_cadastro_input_box">
+                                            <input type="text" name="idCli" style="display: none;" value="<?php echo $idCli; ?>">
+                                            <label for="password">Confirme a sua senha</label>
+                                            <input type="password" name="password" id="password" required>
+                                        </div>
+                                        <input class="butao_proximo" type="submit" value="Prosseguir" onclick="return confirm(' Tem certeza de que deseja banir o cliente de id=<?php echo $idCli; ?>?')">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!--Fim modal-->
+                    
+                </div>
             </article>
         </section>
         <!-- info cliente -->
@@ -126,13 +146,13 @@ $cli2->gostos = $cli["gostos_cli"];
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>' . "Referente ao restaurante" . " " . $nomeRes["nome_res"] . '</h3>';
                         echo '<div class="estrelas">';
-                        echo $comentario->data_coment; 
+                        echo $comentario->data_coment;
                         echo '<p>';
                         for ($i = 1; $i <= 5; $i++) {
                             $starImage = ($i <= $com['nota_coment']) ? '../../../img/icons/estrela.png' : '../../../img/icons/estrela_vazia.png';
                             echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
                         }
-                        echo '</p>';  
+                        echo '</p>';
                         echo '</div>';
                         echo '</div>';
                         echo '<div class="info_coment_cli2">';
@@ -151,6 +171,33 @@ $cli2->gostos = $cli["gostos_cli"];
         <!-- comentarios -->
     </main>
     <?php include("../../../layout/footer.php"); ?>
+    <script>
+        //Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

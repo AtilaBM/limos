@@ -51,7 +51,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
-    margin: 30px 0;
+    margin: 35px 0;
     /* border: 1px solid #F2B807 ; */
 }
 .form_cadastro_input_box{
@@ -70,7 +70,7 @@
     background: transparent;
 }
 .form_cadastro_input_box label{
-    width: 100%;
+    width: 100%;  
     display: flex;
     align-items: center;
     /* border: 1px solid black; */
@@ -78,18 +78,17 @@
     top: 0;
     left: 0;
     padding-top: 5px ;
-    padding-bottom: 15px ;
-    font-size: 0.90em;
+    padding-bottom: 25px ;
     color: #000;
     pointer-events: none;
     transition: .5s;
 }
 .form_cadastro_input_box input:enabled ~ label,
 .form_cadastro_input_box input:valid~ label{
-    top: -20px;
+    font-size: 16px;
+    font-weight: 500;
+    top: -30px;
     left: 0;
-    color: #000000;
-    font-size: 12px;
 }
 .butao_proximo{
     color: #EDEEF3;

@@ -79,9 +79,10 @@ body{
 }
 .login_input_grupo_box input:enabled~ label,
 .login_input_grupo_box input:valid~ label{
-    top: -20px;
+    font-size: 16px;
+    font-weight: 500;
+    top: -30px;
     left: 0;
-    font-size: 12px;
 }
 .butao_login{
     opacity: 0.8;

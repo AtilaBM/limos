@@ -99,7 +99,13 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                 echo "<td>$cli2->id</td>";
                                 echo "<td>$cli2->nome</td>";
                                 echo "<td>";
-                                echo  $cli["status_conta_cli"] == 1 ? "Ativo" : "Desativado";
+                                if($cli["status_conta_cli"] == 3){
+                                    echo "Banido";
+                                }else if($cli["status_conta_cli"] == 2){
+                                    echo "Desativado";
+                                }else{
+                                    echo "Ativo";
+                                }  
                                 echo "</td>";
                                 echo  "<td>$cli2->email</td>";
                                 echo  "<td>$cli2->telefone</td>";

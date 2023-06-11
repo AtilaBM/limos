@@ -4,7 +4,7 @@
     session_start();
 
     $idRes = mysqli_real_escape_string($conexao, trim(isset($_POST["idRes"]) ? $_POST["idRes"] : 0));
-    $location = "Location: index.php?"."idRes=".$idRes;
+    $location = "Location: ../index.php?"."idRes=".$idRes;
 
   
     if(empty($_POST['password'])){

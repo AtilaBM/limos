@@ -88,6 +88,7 @@ body{
     /* border: 1px solid black; */
     height: 30px;
     width: 100%;
+    margin-bottom: 20px;
 }
 .form_cadastro_content_titulo h1{
     font-weight: 500;
@@ -147,10 +148,11 @@ body{
 }
 .form_cadastro_input_box input:enabled ~ label,
 .form_cadastro_input_box input:valid~ label{
-    top: -20px;
+    font-size: 16px;
+    font-weight: 500;
+    top: -30px;
     left: 0;
     color: #000000;
-    font-size: 12px;
 }
 .butao_proximo{
     color: #EDEEF3;

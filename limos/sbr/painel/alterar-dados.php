@@ -26,7 +26,7 @@
     
             <nav class="main_header_content_menu">
                 <div class="menu_a_inportant">
-                        <a href="index.php" class="cadastro_menu">Voltar</a>
+                        <a href="index.php" class="cadastro_menu"><i class="fas fa-arrow-left"></i></a>
                     </div>
             </nav>
         </div>

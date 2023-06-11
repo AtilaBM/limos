@@ -210,3 +210,114 @@ main{
     color: #A60303;
 }
 /* comentarios */
+
+/* modal */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.titulo_modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.modal-content h1 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.modal-content h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.2rem;
+    background-color: #F2B807;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 5px;
+}
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form_cadastro_content {
+    padding: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_cadastro_input_box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_cadastro_input_box input {
+    outline: none;
+    width: 70%;
+}
+.butao_proximo {
+    margin-top: 25px;
+    background: none;
+    padding: 3px 0;
+    width: 100%;
+    border: 1px solid #A60303;
+    border-radius: 5px;
+    outline: none;
+    letter-spacing: 0.8px;
+    transition: .20s;
+}
+
+.butao_proximo:hover {
+    background-color: #A60303;
+    border: 1px solid white;
+    color: white;
+}
+/* modal */

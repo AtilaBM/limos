@@ -28,7 +28,7 @@ form{
     font-size: 1.4em;
     height: 20px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .form_content_titulo h1::after{
     content: '';
@@ -76,9 +76,10 @@ form{
 }
 .form_cadastro_input_box input:enabled ~ label,
 .form_cadastro_input_box input:valid ~ label{
+    font-size: 16px;
+    font-weight: 500;
     top: -20px;
     left: 0;
-    font-size: 16px;
     
 }
 /* ----------------------------------------------------- */
@@ -91,7 +92,8 @@ form{
     width: 100%;
     padding: 5px 0;
     font-size: 16px;
-    text-transform: uppercase;
+    font-weight: 500;
+    top: -30px;
     color: #070300;
     margin-bottom: 5px;
     border: none;
