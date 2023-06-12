@@ -1,6 +1,11 @@
 <?php
     session_start();
-    $conexao = mysqli_connect('localhost', 'root', '1677'); # Dados da Conexão
+
+    define('Host', 'localhost'); # Nome do servidor
+    define('USUARIO', 'root'); # Nome do Usuário
+    define('SENHA', ''); # Senha de acesso
+    define('DB', 'sbr'); # Nome do banco de dados
+    $conexao = mysqli_connect('localhost', 'root', ''); # Dados da Conexão
 
     if(isset($_SESSION['banco-upado'])){
         echo "<p>O banco foi upado com sucesso<p>";
@@ -12,7 +17,7 @@
             $sql = "CREATE SCHEMA IF NOT EXISTS `sbr` DEFAULT CHARACTER SET utf8 ;";
             if($conexao->query($sql) === TRUE){
                 echo "<p>Banco criado com sucesso</p>";
-                $conexao = mysqli_connect('localhost', 'root', '1677', 'sbr');
+                $conexao = mysqli_connect(Host, USUARIO, SENHA, DB);
             }else{
                 echo "<p>Algo deu errado ao criar o banco</p>";
             }
@@ -194,7 +199,8 @@
             # CLIENTES
 
             $sql = "INSERT INTO `cli` (`status_conta_cli`, `telefone_cli`, `email_cli`, `senha_cli`, `data_reg_cli`, `gostos_cli`, `nome_cli`) VALUES
-            (1, '(54)65456-4784', '1@1', '25d55ad283aa400af464c76d713c07ad', '2023-05-11', '3-3-3-3-3-3-3-3-3-3-3', 'Joaquim das Neves');";
+            (1, '(54)65456-4784', '1@1', '25d55ad283aa400af464c76d713c07ad', '2023-05-11', '3-3-3-3-3-3-3-3-3-3-3', 'Joaquim das Neves'),
+            (1, '(61)95986-4634', 'cliente@limos.com', '25d55ad283aa400af464c76d713c07ad', '2023-05-11', '3-3-3-3-3-3-3-3-3-3-3', 'Marie Antoinette Josèphe Jeanne de Habsbourg-Lorraine');";
             if($conexao->query($sql) === TRUE){
                 echo "<p>Clientes inseridos com sucesso!<p>";
             }else{
@@ -235,7 +241,8 @@
             (NULL, 9, '72220571', '21', 'EQNN 22/24 Bloco A', 'Ceilândia Sul (Ceilândia)', 'DF', 'Brasília', 'Brazil'),
             (NULL, 10, '70390079', '23', 'SEPS 708/907', 'Asa Sul', 'DF', 'Brasília', 'Brazil'),
             (NULL, 11, '70272510', '8', 'CLS 209 Bloco A', 'Asa Sul', 'DF', 'Brasília', 'Brazil'),
-            (1, NULL, '72220225', NULL, 'QNN 22 Conjunto E', 'Ceilândia Sul (Ceilândia)', 'DF', 'Brasília', 'Brazil');";
+            (1, NULL, '72220225', NULL, 'QNN 22 Conjunto E', 'Ceilândia Sul (Ceilândia)', 'DF', 'Brasília', 'Brazil'),
+            (2, NULL, '72220225', NULL, 'QNN 22 Conjunto E', 'Ceilândia Sul (Ceilândia)', 'DF', 'Brasília', 'Brazil');";
             if($conexao->query($sql) === TRUE){
                 echo "<p>Endereços inseridos com sucesso!<p>";
             }else{
@@ -275,7 +282,9 @@
 
             # ADMSIS
 
-            $sql = "INSERT INTO `admsis` (`nome_admsis`, `email_admsis`, `senha_admsis`) VALUES ('Louise Françoise le Blanc de la Vallière', '1@1', '25d55ad283aa400af464c76d713c07ad');";
+            $sql = "INSERT INTO `admsis` (`nome_admsis`, `email_admsis`, `senha_admsis`) VALUES
+            ('Louise Françoise le Blanc de la Vallière', '1@1', '25d55ad283aa400af464c76d713c07ad'),
+            ('Louis-Auguste de France', 'adm@limos.com', '25d55ad283aa400af464c76d713c07ad');";
             if($conexao->query($sql) === TRUE){
                 echo "<p>Admnistradores de sistema inseridos com sucesso!<p>";
             }else{

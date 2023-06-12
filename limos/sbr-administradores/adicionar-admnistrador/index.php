@@ -53,7 +53,7 @@
 
                 </div>
 
-                <input class="butao_proximo" type="submit" value="Prosseguir" onclick="return confirm('Deseja cadastrar um novo administrador ao seu restaurante?')">
+                <input class="butao_proximo" type="submit" value="Prosseguir" onclick="return confirm('Deseja cadastrar um novo administrador ao sistema?')">
 
             </div>
 

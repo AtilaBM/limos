@@ -173,11 +173,11 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                                 <div class="form_cadastro_content">
                                     <div class="form_cadastro_input_grupo">
                                         <div class="form_cadastro_input_box">
-                                            <input type="text" name="idRes" style="display: none;" value="<?php echo $idRes; ?>">
+                                            <input type="text" name="idRes" style="display: none;" value="<?php echo $idres; ?>">
                                             <label for="password">Confirme a sua senha</label>
                                             <input type="password" name="password" id="password" required>
                                         </div>
-                                        <input class="butao_proximo" type="submit" value="Prosseguir" onclick="return confirm('Tem certeza de que deseja banir o restaurante de id = <?php echo $idRes; ?>?')">
+                                        <input class="butao_proximo" type="submit" value="Prosseguir" onclick="return confirm('Tem certeza de que deseja banir o restaurante de id = <?php echo $idres; ?>?')">
                                     </div>
                                 </div>
                             </form>

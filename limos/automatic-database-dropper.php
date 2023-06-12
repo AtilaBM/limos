@@ -1,7 +1,12 @@
 <?php
     session_start();
     unset($_SESSION['banco-upado']);
-    $conexao = mysqli_connect('localhost', 'root', '1677');
+
+    define('Host', 'localhost'); # Nome do servidor
+    define('USUARIO', 'root'); # Nome do Usuário
+    define('SENHA', ''); # Senha de acesso
+    $conexao = mysqli_connect(Host, USUARIO, SENHA);
+    
     $sql = "DROP DATABASE IF EXISTS `sbr`;";
     if($conexao->query($sql) === TRUE){
         echo "<p>Database dropada com sucesso</p>";

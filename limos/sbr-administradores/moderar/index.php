@@ -23,7 +23,7 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
     <header class="main_header">
         <div class="main_header_content">
             <div class="img_logo">
-                <a href="index.php" class="logo">
+                <a href="?status=1&filtro=" class="logo">
                     <img src="../../img/limos_vermelho.png" alt="Bem vindo ao projeto Limos" title="Bem vindo ao projeto Limos">
                 </a>
             </div>
