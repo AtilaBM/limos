@@ -74,7 +74,7 @@ $cli2->gostos = $cli["gostos_cli"];
                     </div>
                     <div class="info_cli_box_groups">
                         <h3>Data de Registro:</h3>
-                        <p><?php echo $cli2->dataRes; ?></p>
+                        <p><?php $cli2->formataDataRes(); ?></p>
                     </div>
                     <div class="info_cli_box_groups">
                         <h3>Status da Conta:</h3>
