@@ -156,6 +156,12 @@
             }
         }
         # Fim da função
+        
+        public function formataDataRes(){
+            $data = explode("-", $this->dataRes);
+            echo $data[2]."/".$data[1]."/".$data[0];
+            return 0;
+        }
 
     }
     # Fim da Classe
