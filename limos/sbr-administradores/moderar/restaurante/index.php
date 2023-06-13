@@ -210,7 +210,7 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h3>';
                         echo '<div class="estrelas">';
-                        echo $comentario->data_coment;
+                        echo $comentario->formataDataComent();
                         echo '<p>';
                         for ($i = 1; $i <= 5; $i++) {
                             $starImage = ($i <= $com['nota_coment']) ? '../../../img/icons/estrela.png' : '../../../img/icons/estrela_vazia.png';

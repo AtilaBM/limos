@@ -20,6 +20,12 @@
             $this->nota_coment = $nota;
         }
         # Fim da função
+        
+        public function formataDataComent(){
+            $data = explode("-", $this->data_coment);
+            $data = $data[2]."/".$data[1]."/".$data[0];
+            return $data;
+        }
 
         public function cadastrar(){
             $pdo = new PDO('mysql:host=localhost;dbname=sbr', 'root', '');
