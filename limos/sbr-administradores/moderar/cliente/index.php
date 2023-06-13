@@ -146,7 +146,7 @@ $cli2->gostos = $cli["gostos_cli"];
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>' . "Referente ao restaurante" . " " . $nomeRes["nome_res"] . '</h3>';
                         echo '<div class="estrelas">';
-                        echo $comentario->data_coment;
+                        echo $comentario->formataDataComent();
                         echo '<p>';
                         for ($i = 1; $i <= 5; $i++) {
                             $starImage = ($i <= $com['nota_coment']) ? '../../../img/icons/estrela.png' : '../../../img/icons/estrela_vazia.png';
