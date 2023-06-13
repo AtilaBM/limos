@@ -154,7 +154,7 @@ $filtro =  mysqli_real_escape_string($conexao, trim(isset($_GET["filtro"]) ? $_G
                                     $starImage = ($i <= $com['nota_coment']) ? '../../img/icons/estrela.png' : '../../img/icons/estrela_vazia.png';
                                     echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
                                 } 
-                                echo '<span style="margin-left:5px;">'.$comentario->data_coment . '</span></p>';
+                                echo '<span style="margin-left:5px;">'.$comentario->formataDataComent().'</span></p>';
                                 echo '<p style="margin-top:5px;">' . $comentario->coment . '</p>';
                                 echo "</td>";
 
