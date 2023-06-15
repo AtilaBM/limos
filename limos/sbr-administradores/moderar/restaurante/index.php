@@ -227,7 +227,7 @@ $enderecoRes = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $e
                     }
                     echo '</div>'; //comentario_cli
                 } else {
-                    echo "<p>Ninguém comentou esse restaurante ainda.</p>";
+                    echo "<p class='no-coment'>Ninguém comentou esse restaurante ainda.</p>";
                 }
                 ?>
             </article>

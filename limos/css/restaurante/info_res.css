@@ -179,10 +179,11 @@ ul,li{
     flex-wrap: wrap;
   }
 .titulo_coment{
-    
+    display: flex;
     width: 100%;
     height: 40px;
     padding: 10px 5px;
+
 }
 .titulo_coment h1{
     justify-content: flex-start;
@@ -190,6 +191,7 @@ ul,li{
       color: #fff;
       font-size: 1.2em;
       margin-bottom: 10px;
+      padding-right: 10px;
       text-transform: uppercase;
       letter-spacing: 1.1px;
   }
@@ -272,7 +274,12 @@ textarea::placeholder{
     content:'\f005';
     color: #F2B807;
   }
-  
+  .estrelas2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 /* estrelas==================================================== */
 
 /* comentario_cli=============================================== */

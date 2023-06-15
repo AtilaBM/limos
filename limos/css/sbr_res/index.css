@@ -408,7 +408,12 @@ textarea::placeholder {
     content: '\f005';
     color: #F2B807;
 }
-
+.estrelas2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 /* estrelas==================================================== */
 
 /* comentario_cli=============================================== */

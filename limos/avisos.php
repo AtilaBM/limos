@@ -94,7 +94,7 @@
     # Flags de erro de comentário
 
     if (isset($_SESSION['falha_autenticacao_cliente_comentar'])) {
-        echo $aviso . "É necessário estar logado para poder comentar e aviliar um restaurante.</p>";
+        echo $aviso . "<p style='color:white;'>*É necessário estar logado para poder comentar e avaliar um restaurante*</p>";
         unset($_SESSION['falha_autenticacao_cliente_comentar']);
     }
     if (isset($_SESSION['comentario_incompleto'])) {

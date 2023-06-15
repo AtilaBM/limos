@@ -170,14 +170,14 @@ include("../layout/header.php");
 
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>' . "Enviado por" . " " . $nomeCli["nome_cli"] . '</h3>';
-                        echo '<div>';
-                        echo'<p style="margin-left:25px;">'. $comentario->data_coment.'</p>';
-                        echo '<br>';
+                        echo '<div class="estrelas2">';
+                        echo $comentario->formataDataComent();
+                        echo '<p>';
                         for ($i = 1; $i <= 5; $i++) {
                             $starImage = ($i <= $com['nota_coment']) ? '../img/icons/estrela.png' : '../img/icons/estrela_vazia.png';
                             echo '<img src="' . $starImage . '" style="width: 25px; height: 25px;">';
                             }
-                           
+                            echo '</p>';
                            echo  '</div>';
                         echo '</div>';
 

@@ -2,7 +2,7 @@
     include_once("../../objs/objetos.php");
     include_once("../../conexao.php");
     session_start();
-    include_once("../../avisos.php");
+  
     include("../../layout/header.php");
     include("../../layout/menu_login.php");
 
@@ -102,8 +102,9 @@
 
         <section class="coment">
             <header class="titulo_coment">
-                <h1>Comentários</h1>
-            </header>
+                <h1>Comentários</h1>  
+                <?php include("../../avisos.php")?>
+                </header>
 
             <div class="content_coment">
                 <form action="comentar.php" method="POST" class="form_coment ">
@@ -157,12 +158,15 @@
                         echo '<div class="info_coment_cli1">';
                         echo '<h3>'."Enviado por"." " . $nomeCli["nome_cli"] . '</h3>';
                         
+                        echo '<div class="estrelas2">';
+                        echo $comentario->formataDataComent();
                         echo '<p>'; 
                          for ($i = 1; $i <= 5; $i++) {
                             $starImage = ($i <= $com['nota_coment']) ? '../../img/icons/estrela.png' : '../../img/icons/estrela_vazia.png';
                             echo '<img src="' . $starImage . '" style="width: 20px; height: 20px;">';
                         }  
                         echo '</p>';
+                        echo '</div>';
                         echo '</div>';
 
                         echo '<div class="info_coment_cli2">';

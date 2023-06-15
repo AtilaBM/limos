@@ -248,7 +248,11 @@ main{
   margin-top: 10px;
   color: #A60303;
 }
-
+.no-coment{
+  color: #fff;
+  letter-spacing: 1.1px;
+  text-decoration: underline;
+}
 /* comentarios */
 /* modal */
 .modal {

@@ -163,7 +163,7 @@ $cli2->gostos = $cli["gostos_cli"];
                         echo '</div>'; //comentario_cli
                     }
                 } else {
-                    echo "<p>Esse cliente ainda não realizou nenhum comentário.</p>";
+                    echo "<p class='no-coment'>Esse cliente ainda não realizou nenhum comentário.</p>";
                 }
                 ?>
             </div>
