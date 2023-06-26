@@ -4,7 +4,7 @@
 
     define('Host', 'localhost'); # Nome do servidor
     define('USUARIO', 'root'); # Nome do Usuário
-    define('SENHA', '1677'); # Senha de acesso
+    define('SENHA', ''); # Senha de acesso
     $conexao = mysqli_connect(Host, USUARIO, SENHA);
     
     $sql = "DROP DATABASE IF EXISTS `sbr`;";

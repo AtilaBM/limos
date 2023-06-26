@@ -123,6 +123,7 @@ include("../layout/header.php");
 
                             <h2>Dados do Restaurante</h2>
                             <p>Nome: <?php echo $_SESSION['restaurante']->nome ?></p>
+                            <p>CNPJ: <?php echo $_SESSION['restaurante']->cnpj ?></p>
                             <p><?php for ($i = 1; $i <= 5; $i++) {
                             $starImage = ($i <= $_SESSION["restaurante"]->nota) ? '../img/icons/estrela.png' : '../img/icons/estrela_vazia.png';
                             echo '<img src="' . $starImage . '" style="width: 25px; height: 25px;">';
