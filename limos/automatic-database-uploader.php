@@ -3,9 +3,9 @@
 
     define('Host', 'localhost'); # Nome do servidor
     define('USUARIO', 'root'); # Nome do Usuário
-    define('SENHA', '1677'); # Senha de acesso
+    define('SENHA', ''); # Senha de acesso
     define('DB', 'sbr'); # Nome do banco de dados
-    $conexao = mysqli_connect('localhost', 'root', '1677'); # Dados da Conexão
+    $conexao = mysqli_connect(Host, USUARIO, SENHA); # Dados da Conexão
 
     if(isset($_SESSION['banco-upado'])){
         echo "<p>O banco foi upado com sucesso<p>";

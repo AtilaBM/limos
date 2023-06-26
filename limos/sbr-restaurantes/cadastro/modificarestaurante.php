@@ -16,7 +16,6 @@ session_start();
     <link rel="stylesheet" href="../../css/cadastro_res/modificares.css">
     <title>Dados do Restaurante</title>
 </head>
-
 <body>
 
     <form action="finalizarcadastro.php" method="post" enctype="multipart/form-data">
@@ -98,19 +97,24 @@ session_start();
                 </div>
                 <div class="descres base_input">
                     <label for="desc">Descreva seu restaurante </label>
-                    <textarea class="area" id="desc" name="desc" rows="5" cols="33"><?php
-                                                                                    if ($_SESSION["restaurante"]->statusContaRes == 1) {
-                                                                                        echo trim($_SESSION["restaurante"]->descricao);
-                                                                                    }
-                                                                                    ?></textarea>
+                    <textarea class="area" id="desc" name="desc" rows="5" cols="33">
+                        <?php
+                            if ($_SESSION["restaurante"]->statusContaRes == 1) {
+                                echo trim($_SESSION["restaurante"]->descricao);
+                            }
+                                                                                    
+                        ?>
+                    </textarea>
                 </div>
                 <div class="func_dia_hora base_input">
                     <label for="dia_hora_func">Dias e horários de funcionamento </label>
-                    <textarea class="area" id="dia_hora_func" name="dia_hora_func" rows="5" cols="33"><?php
-                                                                                                        if ($_SESSION["restaurante"]->statusContaRes == 1) {
-                                                                                                            echo trim($_SESSION["restaurante"]->diahorafunc);
-                                                                                                        }
-                                                                                                        ?></textarea>
+                    <textarea class="area" id="dia_hora_func" name="dia_hora_func" rows="5" cols="33">
+                        <?php
+                            if ($_SESSION["restaurante"]->statusContaRes == 1) {
+                                echo trim($_SESSION["restaurante"]->diahorafunc);
+                            }
+                        ?>
+                    </textarea>
                 </div>
                 <div class="cardapio base_input">
                     <label for="cardapio">Uma imagem do cardápio </label>
