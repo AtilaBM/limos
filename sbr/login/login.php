@@ -41,8 +41,15 @@
         
         
         # Redireciona o usuário logado para para o painel
-        header('Location: ../painel/index.php');
-        exit();
+        if($cliente->statusConta == 3){
+            $_SESSION['banido'] = true;
+            header('Location: logout.php');
+            exit();
+        }else{
+            header('Location: ../painel/index.php');
+            exit();
+        }
+        
     }else{
         # Testar se existe algum adm res correspondente
         $query = "SELECT * FROM `admres` WHERE email_admres = '$email' and senha_admres = '$senha'";
@@ -72,7 +79,11 @@
             $row = mysqli_num_rows($result);
             $endereco_bd = mysqli_fetch_assoc($result); 
             $_SESSION['enderecoRes'] = new endereco($endereco_bd["cep_end"], $endereco_bd["num_end"], $endereco_bd["logradouro_end"], $endereco_bd["bairro_end"], $endereco_bd["uf_end"], $endereco_bd["pais_end"], $endereco_bd["cidade_end"], $endereco_bd["id_end"]);
-            
+            if($res->statusContaRes == 3){
+                $_SESSION['banido'] = true;
+                header('Location: logout.php');
+                exit();
+            }
             # Redireciona o usuário logado para para o painel
             header('Location: ../../sbr-restaurantes/index.php');
             exit();

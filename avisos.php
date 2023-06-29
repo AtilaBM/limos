@@ -188,6 +188,13 @@
     }
     # Fim das flags de erro de promoção
 
+    # Flag de Banimento
+    if (isset($_SESSION["banido"])) {
+        echo $aviso2 . "Esta conta foi banida por um de nossos admnistradores.</p>";
+        unset($_SESSION["banido"]);
+    }
+    # Fim flags de banimento
+
     # Flags de sucesso
     if (isset($_SESSION["SucessoDel"])) {
         echo $aviso2 . "Sua conta foi deletada com sucesso.</p>";
