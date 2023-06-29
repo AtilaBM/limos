@@ -190,7 +190,7 @@
 
     # Flag de Banimento
     if (isset($_SESSION["banido"])) {
-        echo $aviso2 . "Esta conta foi banida por um de nossos admnistradores.</p>";
+        echo $aviso2 . "Esta conta foi banida por um de nossos administradores.</p>";
         unset($_SESSION["banido"]);
     }
     # Fim flags de banimento
