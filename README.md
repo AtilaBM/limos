@@ -1,9 +1,48 @@
---------Projeto limos--------
+# Projeto LIMOS
 
-Estes arquivos são o código fonte do PCC (Projeto de Conclusão de Curso) da Escola Técnica de Ceilândia.
+Este repositório contém o código-fonte do **PCC (Projeto de Conclusão de Curso)** da **Escola Técnica de Ceilândia**.
 
-Os repositórios do github que contem o código pode ser acessado através dos links: ( https://github.com/FernandoDosSantosSodre/Limos/) e  ( https://github.com/AtilaBM/limos ).
+## 📂 Repositórios Relacionados
 
-Para que a aplicação funcione, faça o upload do banco de dados contido no arquivo "dump.sql" ou utilize o arquivo "automatic-database-uploader.php".
+Você pode acessar o código-fonte completo nos seguintes repositórios:
 
-Lembre-se de configurar corretamente os dados da conexão no arquivo "conexao.php", "automatic-database-uploader.php" e "automatic-database-dropper.php".
+- [Repositório de Fernando dos Santos Sodré](https://github.com/FernandoDosSantosSodre/Limos/)
+- [Repositório de Átila BM](https://github.com/AtilaBM/limos)
+
+## ⚙️ Como Configurar
+
+### 1. Banco de Dados
+
+Para que a aplicação funcione corretamente, é necessário configurar o banco de dados. Existem duas opções:
+
+- **Importação manual**:  
+  Importe o arquivo `dump.sql` diretamente no seu servidor MySQL.
+
+- **Upload automático**:  
+  Execute o script `automatic-database-uploader.php` para importar o banco de dados automaticamente.
+
+### 2. Configuração da Conexão
+
+Edite os seguintes arquivos para configurar os dados de acesso ao banco de dados:
+
+- `conexao.php`
+- `automatic-database-uploader.php`
+- `automatic-database-dropper.php`
+
+Certifique-se de inserir corretamente as informações de **host**, **usuário**, **senha** e **nome do banco de dados**.
+
+## 🛠️ Tecnologias Utilizadas
+
+- PHP
+- MySQL
+- HTML/CSS
+
+## 👥 Autores
+
+- Fernando dos Santos Sodré  
+- Átila BM
+
+## 🏫 Instituição
+
+Projeto desenvolvido como parte do PCC da **Escola Técnica de Ceilândia**.
+
