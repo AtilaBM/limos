@@ -36,6 +36,7 @@ Certifique-se de inserir corretamente as informações de **host**, **usuário**
 - PHP
 - MySQL
 - HTML/CSS
+- JavaScript
 
 ## 👥 Autores
 
