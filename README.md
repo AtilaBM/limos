@@ -41,7 +41,7 @@ Certifique-se de inserir corretamente as informações de **host**, **usuário**
 ## 👥 Autores
 
 - Fernando dos Santos Sodré  
-- Átila BM
+- Átila Batista Martins
 
 ## 🏫 Instituição
 
